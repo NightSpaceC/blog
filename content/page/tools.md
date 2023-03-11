@@ -91,9 +91,13 @@ lastmod: 2023-01-18T17:41:00+08:00
 
 [ZY-Player](https://github.com/Hunlongyu/ZY-Player)
 
+[VLC media player](https://www.videolan.org/vlc/)
+
 [Listen 1](https://github.com/listen1/listen1_desktop)
 
 [Flash Player SA](https://www.flash.cn/support/debug-downloads)
+
+[BlueStacks](https://www.bluestacks.com/)
 
 # 媒体
 [OBS Studio](https://github.com/obsproject/obs-studio)
@@ -108,3 +112,5 @@ lastmod: 2023-01-18T17:41:00+08:00
 [Hashdown](https://deepmess.com/hashdown/edit.html)
 
 [与佛论禅重制版V2](https://tools.takuron.top/talk-with-buddha/)
+
+[Everything](https://www.voidtools.com/en-us/)
