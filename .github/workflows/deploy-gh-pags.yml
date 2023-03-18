@@ -24,7 +24,7 @@ jobs:
           extended: true
 
       - name: Build
-        run: hugo --minify && printf blog.nightspace.ddnsgeek.com > public/CNAME
+        run: hugo --minify && printf blog.nightspace.dynv6.net > public/CNAME
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3

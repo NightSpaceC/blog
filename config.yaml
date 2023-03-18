@@ -1,4 +1,4 @@
-baseurl: https://blog.nightspace.ddnsgeek.com/
+baseurl: https://blog.nightspace.dynv6.net/
 languageCode: zh-cn
 theme: hugo-theme-stack
 paginate: 5
@@ -242,7 +242,7 @@ menu:
 
         - identifier: rss
           name: RSS
-          url: https://blog.nightspace.ddnsgeek.com/index.xml
+          url: https://blog.nightspace.dynv6.net/index.xml
           params:
               icon: rss
 
