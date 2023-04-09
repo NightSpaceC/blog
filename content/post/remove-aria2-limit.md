@@ -1,6 +1,6 @@
 ---
 author: "Night Space"
-title: 去除aria2下载连接数限制
+title: 去除 aria2 下载连接数限制
 date: 2023-04-02T11:54:00+08:00
 lastmod: 2023-04-02T11:54:00+08:00
 tags:

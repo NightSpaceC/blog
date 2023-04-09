@@ -1,6 +1,6 @@
 ---
 author: "Night Space"
-title: Ubuntu安装Brave踩坑
+title: Ubuntu 安装 Brave 踩坑
 date: 2022-07-07T15:59:00+08:00
 lastmod: 2022-07-07T15:59:00+08:00
 tags:

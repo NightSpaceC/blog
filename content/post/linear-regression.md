@@ -11,6 +11,7 @@ categories:
     - 机器学习
 ---
 # 问题
+
 有 $n$ 个点，坐标分别为 $(x_1,y_1)$ , $(x_2,y_2)$ ... $(x_n,y_n)$
 
 有一个函数，格式为 $f(x)=kx$
@@ -18,7 +19,9 @@ categories:
 有一个损失值，计算方式为 $l=\sum_{i=1}^n(f(x_i)-y_i)^2$
 
 如何找到一个使 $l$ 最小的 $k$ ？
+
 # 梯度下降
+
 一个简单的方法是选择一个随机的 $k$ ，然后不断改变 $k$ 使得 $l$ 降低
 
 为了加快这一过程，可以利用梯度（也就是微分）来计算应该改变多少
@@ -34,9 +37,13 @@ categories:
 每次让 $k$ 移动 $-\dfrac{\partial l}{\partial k}\eta$
 
 最后就可以得到较优的 $k$
+
 # 计算梯度
+
 这一步只需要简单的微分知识，可以得到 $\dfrac{\partial l}{\partial k}=\sum_{i=1}^n2x_i(f(x_i)-y_i)$
+
 # 进阶
+
 如果 $f(x)=kx+b$ ，就有了两个参数，但做法依然类似，不过是多处理一个参数
 
 每次让 $k$ 移动 $-\dfrac{\partial l}{\partial k}\eta$
@@ -50,6 +57,7 @@ $\dfrac{\partial l}{\partial b}=\sum_{i=1}^n2(f(x_i)-y_i)$
 这样便可以得到较优的 $k$ 和 $b$
 
 # 代码
+
 ```go
 package main
 

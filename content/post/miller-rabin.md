@@ -1,6 +1,6 @@
 ---
 author: "Night Space"
-title: Miller-Rabin素性测试
+title: Miller Rabin 素性测试
 date: 2021-07-06T19:17:33+08:00
 lastmod: 2021-07-06T19:17:33+08:00
 tags:
@@ -9,6 +9,7 @@ categories:
     - 算法
 ---
 自己对着百度百科写了一个板子
+
 ```cpp
 #include<stdlib.h>
 int qPower(const int &a,const int &b,const int &m)
@@ -57,4 +58,5 @@ inline bool MillerRabin(const int &n,const int &testTime=8)
     }
     return 1;
 }
+
 ```

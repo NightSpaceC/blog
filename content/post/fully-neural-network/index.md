@@ -15,7 +15,9 @@ categories:
 这是一个全连接神经网络的简图，由一个输入层，两个隐藏层和一个输出层构成
 
 在这篇文章中，我将详细的讲讲它和其它类似的神经网络怎么工作，以及反向传播的完整推导过程
+
 # 神经元
+
 将一个神经元放大来看，大概是这样：
 
 ![神经元简图](neural-structure.png)
@@ -33,7 +35,9 @@ categories:
 激活之后，它的输出为： $r=f(q)$
 
 请务必记牢这两个式子，后面会频繁地使用它们
+
 # 约定
+
 网络层数（不包括输入层）： $T$
 
 网络输入数量： $n_0$
@@ -51,7 +55,9 @@ categories:
 第 $k$ 层第 $i$ 个神经元激活前的输出： $q_{ki}$
 
 第 $k$ 层第 $i$ 个神经元激活后的输出： $r_{ki}$
+
 # 前向传播
+
 之前，我们已经知道了每一个神经元的工作方法
 
 那么这一步十分简单，用一样的方法即可
@@ -61,7 +67,9 @@ $$q_{ki}=\sum_{j=1}^{n_{k-1}}w_{kij}r_{{k-1}j}+b_{ki}$$
 $$r_{ki}=f_k(q_{ki})$$
 
 最后一层神经元激活后的输出，就是整个神经网络的输出
+
 # 训练
+
 到目前为止，我们还有一个很大的问题：参数从哪来？
 
 类似于网络层数、神经元数量这些关于网络结构以及之后要说的训练过程的参数，我们称为**超参数**
@@ -103,7 +111,9 @@ $$w_{kij}\gets O\left(w_{kij}, \dfrac{\partial l}{\partial w_{kij}}, \eta\right)
 $$b_{ki}\gets O\left(b_{ki}, \dfrac{\partial l}{\partial b_{ki}}, \eta\right)$$
 
 就可以得到较优的参数
+
 # 反向传播
+
 现在，我们来说说如何求出 $\dfrac{\partial l}{\partial w_{kij}}$ 和 $\dfrac{\partial l}{\partial b_{ki}}$ ，这也是最难的一部分
 
 **高能预警，请有一定的微分基础后再往下读**
@@ -142,7 +152,9 @@ $$
 $$
 
 得出了这几条公式，我们就能从后往前算出所有的 $\dfrac{\partial l}{\partial q_{ki}}$ ，再用它们求出所有的 $\dfrac{\partial l}{\partial w_{kij}}$ 和 $\dfrac{\partial l}{\partial b_{ki}}$ ，用来进行梯度下降
+
 # 总结
+
 总结起来，重要的公式无外乎这几个：
 
 $$q_{ki}=\sum_{j=1}^{n_{k-1}}w_{kij}r_{{k-1}j}+b_{ki}$$
@@ -162,7 +174,9 @@ $$\dfrac{\partial l}{\partial b_{ki}}=\dfrac{\partial l}{\partial q_{ki}}$$
 $$w_{kij}\gets O\left(w_{kij}, \dfrac{\partial l}{\partial w_{kij}}, \eta\right)$$
 
 $$b_{ki}\gets O\left(b_{ki}, \dfrac{\partial l}{\partial b_{ki}}, \eta\right)$$
+
 # 再谈训练
+
 在训练一个模型时，需要将数据集分成两部分：训练集和测试集
 
 测试集不能以任何形式参与训练，仅用于测试模型准确性
@@ -188,12 +202,15 @@ $\lambda$ 是正则化因子，是超参数
 $\lambda$ 值越大，网络中的参数会偏向于更小以降低损失值，同时防止过拟合
 
 还有一种常用的正则化方法 Dropout ，它通过在训练时随机忽略一部分神经元来防止过拟合，读者可以自行了解
+
 # 演示代码
+
 这份代码实现了一个分类器，并用异或问题进行测试
 
 它不支持正则化和不同的激活函数
 
 年代久远，风格不一致请见谅
+
 ```cpp
 #include<vector>
 #include<random>

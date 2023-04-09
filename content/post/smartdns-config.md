@@ -1,6 +1,6 @@
 ---
 author: "Night Space"
-title: SmartDNS自用配置
+title: SmartDNS 自用配置
 date: 2023-04-02T11:54:00+08:00
 lastmod: 2023-04-02T11:54:00+08:00
 tags:
@@ -33,4 +33,5 @@ server-https https://1.0.0.1/dns-query
 server-https https://dns.pub/dns-query # DNSPod
 server-https https://9.9.9.10/dns-query
 server-https https://doh.360.cn/dns-query
+
 ```

@@ -13,15 +13,21 @@ categories:
 本文将会一步一步地介绍个人博客的搭建的全过程（也是[我的个人博客](https://NightSpaceC.github.io/blog/)的搭建过程）
 
 注：如果有不明白的地方，可以看[我的个人博客的Github仓库](https://github.com/NightSpaceC/blog)
+
 # Hugo
+
 Hugo是一个静态网站生成器。当然，它也可以生成我们要搭建的个人博客。
+
 ### 安装
+
 这一步十分简单，只需要前往[Hugo在Github上的Release页面](https://github.com/gohugoio/hugo/releases/)，下载对应的版本并解压到合适的位置就行了。
 
 你也可以下载Deb包，再通过`dpkg -i <.deb文件名>`安装
 
 如非必需，建议下载extended版本，因为在之后可能会用到
+
 ### 使用
+
 首先，选定一个目录来存放你的博客，你需要作如下事情：
 - 在该目录下创建`config.toml`文件，用于存储配置信息（为TOML格式）
 - 在该目录下创建`themes`文件夹，用于存储主题
@@ -38,13 +44,17 @@ Hugo是一个静态网站生成器。当然，它也可以生成我们要搭建�
 注1：要构建设置了`draft: true`的草稿文章，请使用`hugo server --draft`
 
 注2：命令中的`hugo`视可执行文件位置而定，除非你使用Deb包，下文也依旧如此
+
 ### 发布
+
 测试完成后，你可以使用`hugo`来发布。此时构建结果会输出到`public`文件夹
 
 然后，你可以利用Web服务器和浏览器，来访问它们。
 
 注：如果你真的要就这样把它发布出去，你必须在`config.toml`中加入`baseURL`参数，值为今后访问它时使用的URL，如`https://NightSpaceC.github.io/blog/`
+
 # 部署在Github Pages上
+
 在此之前，你需要
 - 一个Github帐号
 - 安装Git
@@ -53,10 +63,13 @@ Hugo是一个静态网站生成器。当然，它也可以生成我们要搭建�
 以上不属于本文的主要内容，不再赘述
 
 ### 创建一个用于存放个人博客的仓库
+
 建议仓库名为`<用户名>.github.io`
 
 其余略
+
 ### 将个人博客推送至上一步创建的仓库
+
 1. 进行前文所述的发布操作
 2. 进入`public/`目录
 3. 执行`git init`
@@ -68,7 +81,9 @@ Hugo是一个静态网站生成器。当然，它也可以生成我们要搭建�
 其中3,4仅第一次推送时需执行
 
 每一次博客内容的改变，都需要执行以上操作
+
 ### 配置Github Pages
+
 前往`https://github.com/<Github用户名>/<创建的仓库名>/settings/pages`
 
 设置Source部分的分支（此时应该只有一个，选择即可）和目录，点击Save
@@ -76,7 +91,9 @@ Hugo是一个静态网站生成器。当然，它也可以生成我们要搭建�
 此时，你的博客访问地址将会在上方显示（用这个来配置之前说的`baseURL`）
 
 至此，你的个人博客已基本完成。如果你满足于此，就可以关闭这个页面了，否则，请继续往下看
+
 # 使用Fuse添加搜索功能
+
 你可以使用Fuse在前端中实现搜索
 
 但是，直接使用Fuse是非常繁琐的。所以，我找到了一个支持Fuse的Hugo主题：[hugo-search-fuse-js](https://github.com/kaushalmodi/hugo-search-fuse-js)
@@ -155,7 +172,9 @@ weight: 60                #设置权重，决定了在主菜单中显示的顺�
 </html>
 ```
 至此，你可以通过访问`<你的baseURL>/search/`来进行搜索
+
 # 使用Utterances添加评论功能
+
 Utterances的添加方法比较多，需视情况而定
 
 大部分情况下，你需要进行如下操作：
@@ -164,13 +183,17 @@ Utterances的添加方法比较多，需视情况而定
 3. 在[Utterances](https://utteranc.es)生成JavaScript代码，在页面模板的合适位置添加
 
 当然，如果你像我一样幸运，使用的主题对Utterances提供了支持，那么仅需根据文档或示例修改`config.toml`即可
+
 # 利用Github Actions进行自动化部署与在线编辑
+
 ### 这有什么用？
+
 这当然是有用的。例如：
 1. 你不再需要用自己的电脑Build再Push
 2. 使得编辑文章变得简单，甚至可以直接在Github的提供的网页接口上编辑
 
 ### 步骤
+
 1. 创建`.github/workflows/deploy-gh-pags.yml`，内容如下：
 
 ```yml
@@ -220,8 +243,11 @@ jobs:
 注：必须确保刚刚添加的文件处于`master`分支，否则请自行修改`.github/workflows/deploy-gh-pags.yml`
 
 执行完上述操作，Github会自动自行第2步中编写的Github Actions配置文件，构建你的个人博客，并将`public`文件夹下的内容放在`gh-pages`分支，设置Github Pages地址
+
 # 大功告成
+
 现在，你有了一个如标题所说的个人博客。每当仓库里的内容改变，Github Actions会自动帮你构建并部署。还可以随心所欲地搜索、评论。
 
 # Update
+
 2021-12-5 12:30:00 +08:00: 由于认为Gitalk存在安全隐患，改用Utterances

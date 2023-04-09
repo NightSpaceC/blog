@@ -1,6 +1,6 @@
 ---
 author: "Night Space"
-title: 题解 P4825 【[USACO15FEB]Cow Hopscotch S】
+title: P4825 【[USACO15FEB]Cow Hopscotch S】
 date: 2020-08-19T13:51:11+08:00
 lastmod: 2020-08-19T13:51:11+08:00
 tags:
@@ -10,7 +10,8 @@ categories:
     - 算法
     - 题解
 ---
-### 这道题应该使用动态规划
+这道题应该使用动态规划
+
 但是我们一看题目就会发现，这样做时间复杂度会达到$O(n^4)$
 
 于是大佬们就开始用线段树等来进行优化
@@ -25,7 +26,8 @@ $O(n^4)$的复杂度会使循环体被运行$10^8$次，约$530$毫秒，而且�
 
 所以，这道题不需要优化
 
-**Code:**
+# Code
+
 ```cpp
 #include<bits/stdc++.h>
 using namespace std;
@@ -82,4 +84,5 @@ int main()
     write(f[r][c]);
     return 0;
 }
+
 ```
