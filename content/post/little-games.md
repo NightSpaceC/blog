@@ -8,9 +8,9 @@ tags:
 categories:
     - 游戏
 ---
-### 该博文汇集了一些博主做的小游戏
+该博文汇集了一些博主做的小游戏
 
-二十四点解题：
+# 二十四点解题
 
 ```cpp
 #include<bits/stdc++.h>
@@ -267,10 +267,9 @@ int main()
     sol2();
     return 0;
 }
-
 ```
 
-谁是卧底：
+# 谁是卧底
 
 ```cpp
 #include<stdio.h>
@@ -364,10 +363,9 @@ bool wd_win(int peo_num,bool *peo_life,bool *wd_pla)
     }
     return 1;
 }
-
 ```
 
-人机对战井字棋：
+# 人机对战井字棋
 
 ```cpp
 #include<stdio.h>
@@ -605,10 +603,9 @@ int main()
     }
     return 0;
 }
-
 ```
 
-小公举养成记：
+# 小公举养成记
 
 ```cpp
 #include<iostream>
@@ -1047,5 +1044,4 @@ void game(char d_name[CH_L],char f_name[CH_L],int b_month,int b_data,char d_star
         printf("经过刻苦修炼,恭喜你成为为%s!\n----------------游戏结束----------------\n",job[tmp].c_str());
     }
 }
-
 ```

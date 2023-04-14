@@ -58,5 +58,4 @@ inline bool MillerRabin(const int &n,const int &testTime=8)
     }
     return 1;
 }
-
 ```

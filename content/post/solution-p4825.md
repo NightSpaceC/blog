@@ -84,5 +84,4 @@ int main()
     write(f[r][c]);
     return 0;
 }
-
 ```
