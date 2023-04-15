@@ -20,10 +20,6 @@ lastmod: 2023-01-18T17:41:00+08:00
 
 [dev-sidecar](https://github.com/docmirror/dev-sidecar)
 
-[dnscrypt-proxy](https://github.com/DNSCrypt/dnscrypt-proxy)
-
-[Dynu](https://www.dynu.com/)
-
 [dynv6](https://dynv6.com/)
 
 [GotoX](https://github.com/SeaHOH/GotoX)
@@ -31,6 +27,8 @@ lastmod: 2023-01-18T17:41:00+08:00
 [Netch](https://github.com/netchx/netch)
 
 [Tor](https://www.torproject.org/)
+
+[SmartDNS](https://pymumu.github.io/smartdns/)
 
 [SuiDao](https://suidao.io/)
 
@@ -51,6 +49,8 @@ lastmod: 2023-01-18T17:41:00+08:00
 # 下载
 
 [aria2](https://github.com/aria2/aria2)
+
+[qBittorrent](https://www.qbittorrent.org/)
 
 [youtube-dl](https://github.com/ytdl-org/youtube-dl)
 
