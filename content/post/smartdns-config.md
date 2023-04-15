@@ -33,5 +33,4 @@ server-https https://1.0.0.1/dns-query
 server-https https://dns.pub/dns-query # DNSPod
 server-https https://9.9.9.10/dns-query
 server-https https://doh.360.cn/dns-query
-
 ```
