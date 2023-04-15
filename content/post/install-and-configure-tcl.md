@@ -25,7 +25,7 @@ tce-load -wi tc-install
 安装
 
 ```
-sudo tc-install
+sudo tc-install.sh
 ```
 
 # 配置系统
@@ -85,7 +85,7 @@ sudo vi /usr/local/etc/sshsshd_config
 初始化
 
 ```bash
-/usr/local/etc/init.d/openssh start
+sudo /usr/local/etc/init.d/openssh start
 ```
 
 自动启动
