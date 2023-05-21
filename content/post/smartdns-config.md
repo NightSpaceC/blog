@@ -25,12 +25,12 @@ log-level info
 server 114.114.114.114
 server 8.8.8.8
 server 180.76.76.76 # Baidu
-server 52.80.52.52 # OneDNS
+server 117.50.10.10 # OneDNS
 
 server-https https://dns.alidns.com/dns-query
 server-https https://doh.opendns.com/dns-query
 server-https https://1.0.0.1/dns-query
 server-https https://dns.pub/dns-query # DNSPod
-server-https https://9.9.9.10/dns-query
+server-https https://dns10.quad9.net/dns-query
 server-https https://doh.360.cn/dns-query
 ```
