@@ -66,7 +66,7 @@ sudo vi /usr/local/etc/sshsshd_config
 # 编辑配置
 ```
 
-修复SFTP
+修复SFTP（可能需要）
 
 ```patch
 --- /usr/local/etc/ssh/sshd_config.orig
@@ -75,7 +75,7 @@ sudo vi /usr/local/etc/sshsshd_config
  #Banner none
  
  # override default of no subsystems
--Subsystem      sftp    /usr/libexec/sftp-server
+-Subsystem      sftp    ******
 +Subsystem      sftp    /usr/local/lib/openssh/sftp-server
  
  # Example of overriding settings on a per-user basis
