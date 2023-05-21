@@ -87,7 +87,7 @@ sudo vi /usr/local/etc/sshsshd_config
 &lt;span class="c1"># 编辑配置&lt;/span>
 &lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;p>修复SFTP&lt;/p>
+&lt;/div>&lt;p>修复SFTP（可能需要）&lt;/p>
 &lt;div class="highlight">&lt;div class="chroma">
 &lt;table class="lntable">&lt;tr>&lt;td class="lntd">
 &lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
@@ -108,7 +108,7 @@ sudo vi /usr/local/etc/sshsshd_config
 &lt;/span>&lt;span class="gi">&lt;/span>&lt;span class="gu">@@ 0,7 0,7 @@
 &lt;/span>&lt;span class="gu">&lt;/span> #Banner none
 # override default of no subsystems
-&lt;span class="gd">-Subsystem sftp /usr/libexec/sftp-server
+&lt;span class="gd">-Subsystem sftp ******
 &lt;/span>&lt;span class="gd">&lt;/span>&lt;span class="gi">+Subsystem sftp /usr/local/lib/openssh/sftp-server
 &lt;/span>&lt;span class="gi">&lt;/span>
 # Example of overriding settings on a per-user basis
@@ -190,12 +190,12 @@ log-level info
 server 114.114.114.114
 server 8.8.8.8
 server 180.76.76.76 # Baidu
-server 52.80.52.52 # OneDNS
+server 117.50.10.10 # OneDNS
 server-https https://dns.alidns.com/dns-query
 server-https https://doh.opendns.com/dns-query
 server-https https://1.0.0.1/dns-query
 server-https https://dns.pub/dns-query # DNSPod
-server-https https://9.9.9.10/dns-query
+server-https https://dns10.quad9.net/dns-query
 server-https https://doh.360.cn/dns-query
 &lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
