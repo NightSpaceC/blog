@@ -16,7 +16,7 @@ aria2修改配置可使单服务器最多16连接
 
 要想打破16连接的限制，需要修改源码再自己重新编译
 
-经过一段时间的摸索，这是补丁（为方便国内使用，Github链接使用了[GitHub Proxy](https://ghproxy.com/)）
+经过一段时间的摸索，这是补丁
 
 ```patch
 --- Dockerfile.mingw
