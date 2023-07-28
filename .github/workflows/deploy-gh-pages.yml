@@ -25,11 +25,11 @@ jobs:
           extended: true
 
       - name: Build
-        run: hugo --minify && printf blog.nightspace.dynv6.net > public/CNAME
+        run: hugo --minify && printf ${{ vars.DOMAIN }} > public/CNAME
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
-        if: ${{ github.ref == 'refs/heads/master' }}
+        if: github.ref == 'refs/heads/master'
         with:
           personal_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: public
