@@ -338,12 +338,16 @@ sudo chmod &lt;span class="m">777&lt;/span> aria2c.exe
 &lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div></description></item><item><title>工具箱</title><link>https://blog.nightspace.dynv6.net/page/tools/</link><pubDate>Wed, 07 Dec 2022 13:39:00 +0800</pubDate><guid>https://blog.nightspace.dynv6.net/page/tools/</guid><description>&lt;p>这里是我使用的各种软件/产品&lt;/p>
-&lt;h1 id="安全相关">安全相关&lt;/h1>
+&lt;h1 id="安全">安全&lt;/h1>
 &lt;p>&lt;a class="link" href="https://keepass.info/" target="_blank" rel="noopener"
 >KeePass&lt;/a>&lt;/p>
 &lt;p>&lt;a class="link" href="https://www.veracrypt.fr/en/Home.html" target="_blank" rel="noopener"
 >VeraCrypt&lt;/a>&lt;/p>
-&lt;h1 id="网络相关">网络相关&lt;/h1>
+&lt;p>&lt;a class="link" href="https://tools.takuron.top/talk-with-buddha/" target="_blank" rel="noopener"
+>与佛论禅重制版V2&lt;/a>&lt;/p>
+&lt;p>&lt;a class="link" href="https://deepmess.com/hashdown/edit.html" target="_blank" rel="noopener"
+>Hashdown&lt;/a>&lt;/p>
+&lt;h1 id="网络">网络&lt;/h1>
 &lt;p>&lt;a class="link" href="https://github.com/Dreamacro/clash" target="_blank" rel="noopener"
 >Clash&lt;/a>&lt;/p>
 &lt;p>&lt;a class="link" href="https://www.cpolar.com/" target="_blank" rel="noopener"
@@ -358,6 +362,8 @@ sudo chmod &lt;span class="m">777&lt;/span> aria2c.exe
 >Netch&lt;/a>&lt;/p>
 &lt;p>&lt;a class="link" href="https://www.torproject.org/" target="_blank" rel="noopener"
 >Tor&lt;/a>&lt;/p>
+&lt;p>&lt;a class="link" href="https://zeronet.io/" target="_blank" rel="noopener"
+>ZeroNet&lt;/a>&lt;/p>
 &lt;p>&lt;a class="link" href="https://pymumu.github.io/smartdns/" target="_blank" rel="noopener"
 >SmartDNS&lt;/a>&lt;/p>
 &lt;p>&lt;a class="link" href="https://suidao.io/" target="_blank" rel="noopener"
@@ -366,6 +372,8 @@ sudo chmod &lt;span class="m">777&lt;/span> aria2c.exe
 >wssocks&lt;/a>&lt;/p>
 &lt;p>&lt;a class="link" href="https://www.zerotier.com/" target="_blank" rel="noopener"
 >ZeroTier&lt;/a>&lt;/p>
+&lt;p>&lt;a class="link" href="https://github.com/NightSpaceC/warp-cloner/" target="_blank" rel="noopener"
+>warp-cloner&lt;/a>&lt;/p>
 &lt;h1 id="信息">信息&lt;/h1>
 &lt;p>&lt;a class="link" href="https://bing.com/" target="_blank" rel="noopener"
 >Bing&lt;/a>&lt;/p>
@@ -382,6 +390,8 @@ sudo chmod &lt;span class="m">777&lt;/span> aria2c.exe
 >qBittorrent&lt;/a>&lt;/p>
 &lt;p>&lt;a class="link" href="https://github.com/ytdl-org/youtube-dl" target="_blank" rel="noopener"
 >youtube-dl&lt;/a>&lt;/p>
+&lt;p>&lt;a class="link" href="https://mypikpak.com/" target="_blank" rel="noopener"
+>Pikpak&lt;/a>&lt;/p>
 &lt;h1 id="沟通">沟通&lt;/h1>
 &lt;p>&lt;a class="link" href="https://discord.com/" target="_blank" rel="noopener"
 >Discord&lt;/a>&lt;/p>
@@ -389,6 +399,8 @@ sudo chmod &lt;span class="m">777&lt;/span> aria2c.exe
 >Outlook&lt;/a>&lt;/p>
 &lt;p>&lt;a class="link" href="https://www.thunderbird.net/" target="_blank" rel="noopener"
 >Thunderbird&lt;/a>&lt;/p>
+&lt;p>&lt;a class="link" href="https://web.skype.com/" target="_blank" rel="noopener"
+>Skype&lt;/a>&lt;/p>
 &lt;h1 id="开发">开发&lt;/h1>
 &lt;p>&lt;a class="link" href="https://hub.docker.com/" target="_blank" rel="noopener"
 >Docker&lt;/a>&lt;/p>
@@ -398,6 +410,8 @@ sudo chmod &lt;span class="m">777&lt;/span> aria2c.exe
 >Github&lt;/a>&lt;/p>
 &lt;p>&lt;a class="link" href="https://code.visualstudio.com/" target="_blank" rel="noopener"
 >Visual Studio Code&lt;/a>&lt;/p>
+&lt;p>&lt;a class="link" href="https://learn.microsoft.com/en-us/sysinternals/downloads/process-explorer" target="_blank" rel="noopener"
+>Process Explorer&lt;/a>&lt;/p>
 &lt;h1 id="逆向工程">逆向工程&lt;/h1>
 &lt;p>&lt;a class="link" href="https://github.com/dnSpy/dnSpy" target="_blank" rel="noopener"
 >dnSpy&lt;/a>&lt;/p>
@@ -411,6 +425,8 @@ sudo chmod &lt;span class="m">777&lt;/span> aria2c.exe
 >MEGA&lt;/a>&lt;/p>
 &lt;p>&lt;a class="link" href="https://trainbit.com/" target="_blank" rel="noopener"
 >Trainbit&lt;/a>&lt;/p>
+&lt;p>&lt;a class="link" href="https://www.terabox.com/" target="_blank" rel="noopener"
+>TeraBox&lt;/a>&lt;/p>
 &lt;h1 id="学习">学习&lt;/h1>
 &lt;p>&lt;a class="link" href="https://www.luogu.com.cn/" target="_blank" rel="noopener"
 >洛谷&lt;/a>&lt;/p>
@@ -431,6 +447,8 @@ sudo chmod &lt;span class="m">777&lt;/span> aria2c.exe
 >VLC media player&lt;/a>&lt;/p>
 &lt;p>&lt;a class="link" href="https://github.com/Hunlongyu/ZY-Player" target="_blank" rel="noopener"
 >ZY-Player&lt;/a>&lt;/p>
+&lt;p>&lt;a class="link" href="https://cheatengine.org/" target="_blank" rel="noopener"
+>Cheat Engine&lt;/a>&lt;/p>
 &lt;h1 id="媒体">媒体&lt;/h1>
 &lt;p>&lt;a class="link" href="https://kalidoface.com/" target="_blank" rel="noopener"
 >Kalidoface&lt;/a>&lt;/p>
@@ -438,15 +456,9 @@ sudo chmod &lt;span class="m">777&lt;/span> aria2c.exe
 >OBS Studio&lt;/a>&lt;/p>
 &lt;p>&lt;a class="link" href="https://github.com/mltframework/shotcut" target="_blank" rel="noopener"
 >Shotcut&lt;/a>&lt;/p>
-&lt;h1 id="其它">其它&lt;/h1>
+&lt;h1 id="日常管理">日常管理&lt;/h1>
 &lt;p>&lt;a class="link" href="https://www.voidtools.com/en-us/" target="_blank" rel="noopener"
->Everything&lt;/a>&lt;/p>
-&lt;p>&lt;a class="link" href="https://deepmess.com/hashdown/edit.html" target="_blank" rel="noopener"
->Hashdown&lt;/a>&lt;/p>
-&lt;p>&lt;a class="link" href="https://emn178.github.io/online-tools/" target="_blank" rel="noopener"
->Online Tools&lt;/a>&lt;/p>
-&lt;p>&lt;a class="link" href="https://tools.takuron.top/talk-with-buddha/" target="_blank" rel="noopener"
->与佛论禅重制版V2&lt;/a>&lt;/p></description></item><item><title>P2831 [NOIP2016 提高组] 愤怒的小鸟</title><link>https://blog.nightspace.dynv6.net/post/solution-p2831/</link><pubDate>Sun, 07 Aug 2022 15:14:00 +0800</pubDate><guid>https://blog.nightspace.dynv6.net/post/solution-p2831/</guid><description>&lt;h1 id="题目分析">题目分析&lt;/h1>
+>Everything&lt;/a>&lt;/p></description></item><item><title>P2831 [NOIP2016 提高组] 愤怒的小鸟</title><link>https://blog.nightspace.dynv6.net/post/solution-p2831/</link><pubDate>Sun, 07 Aug 2022 15:14:00 +0800</pubDate><guid>https://blog.nightspace.dynv6.net/post/solution-p2831/</guid><description>&lt;h1 id="题目分析">题目分析&lt;/h1>
 &lt;p>已知 $n$ 个在第一象限的点，最少需要几条形如 $y=ax^2 + bx(a&amp;lt;0)$ 的曲线可以覆盖所有点&lt;/p>
 &lt;h1 id="思路">思路&lt;/h1>
 &lt;p>显然，只有那些至少经过一个点的曲线是需要考虑的&lt;/p>
