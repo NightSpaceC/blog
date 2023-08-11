@@ -6,13 +6,17 @@ lastmod: 2023-01-18T17:41:00+08:00
 ---
 这里是我使用的各种软件/产品
 
-# 安全相关
+# 安全
 
 [KeePass](https://keepass.info/)
 
 [VeraCrypt](https://www.veracrypt.fr/en/Home.html)
 
-# 网络相关
+[与佛论禅重制版V2](https://tools.takuron.top/talk-with-buddha/)
+
+[Hashdown](https://deepmess.com/hashdown/edit.html)
+
+# 网络
 
 [Clash](https://github.com/Dreamacro/clash)
 
@@ -28,6 +32,8 @@ lastmod: 2023-01-18T17:41:00+08:00
 
 [Tor](https://www.torproject.org/)
 
+[ZeroNet](https://zeronet.io/)
+
 [SmartDNS](https://pymumu.github.io/smartdns/)
 
 [SuiDao](https://suidao.io/)
@@ -35,6 +41,8 @@ lastmod: 2023-01-18T17:41:00+08:00
 [wssocks](https://github.com/genshen/wssocks)
 
 [ZeroTier](https://www.zerotier.com/)
+
+[warp-cloner](https://github.com/NightSpaceC/warp-cloner/)
 
 # 信息
 
@@ -54,6 +62,8 @@ lastmod: 2023-01-18T17:41:00+08:00
 
 [youtube-dl](https://github.com/ytdl-org/youtube-dl)
 
+[Pikpak](https://mypikpak.com/)
+
 # 沟通
 
 [Discord](https://discord.com/)
@@ -61,6 +71,8 @@ lastmod: 2023-01-18T17:41:00+08:00
 [Outlook](http://outlook.com/)
 
 [Thunderbird](https://www.thunderbird.net/)
+
+[Skype](https://web.skype.com/)
 
 # 开发
 
@@ -72,6 +84,8 @@ lastmod: 2023-01-18T17:41:00+08:00
 
 [Visual Studio Code](https://code.visualstudio.com/)
 
+[Process Explorer](https://learn.microsoft.com/en-us/sysinternals/downloads/process-explorer)
+
 # 逆向工程
 
 [dnSpy](https://github.com/dnSpy/dnSpy)
@@ -79,6 +93,7 @@ lastmod: 2023-01-18T17:41:00+08:00
 [JPEXS Free Flash Decompiler](https://github.com/jindrapetrik/jpexs-decompiler)
 
 # 服务
+
 [Cloudflare](https://cloudflare.com/)
 
 
@@ -87,6 +102,8 @@ lastmod: 2023-01-18T17:41:00+08:00
 [MEGA](https://mega.nz/)
 
 [Trainbit](https://trainbit.com/)
+
+[TeraBox](https://www.terabox.com/)
 
 # 学习
 
@@ -110,6 +127,8 @@ lastmod: 2023-01-18T17:41:00+08:00
 
 [ZY-Player](https://github.com/Hunlongyu/ZY-Player)
 
+[Cheat Engine](https://cheatengine.org/)
+
 # 媒体
 
 [Kalidoface](https://kalidoface.com/)
@@ -118,12 +137,6 @@ lastmod: 2023-01-18T17:41:00+08:00
 
 [Shotcut](https://github.com/mltframework/shotcut)
 
-# 其它
+# 日常管理
 
 [Everything](https://www.voidtools.com/en-us/)
-
-[Hashdown](https://deepmess.com/hashdown/edit.html)
-
-[Online Tools](https://emn178.github.io/online-tools/)
-
-[与佛论禅重制版V2](https://tools.takuron.top/talk-with-buddha/)
