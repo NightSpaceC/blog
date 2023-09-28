@@ -61,8 +61,8 @@ filetool.sh -b
 
 ```bash
 tce-load -wi openssh
-sudo cp /usr/local/etc/ssh/sshd_config.orig /usr/local/etc/sshsshd_config
-sudo vi /usr/local/etc/sshsshd_config
+sudo cp /usr/local/etc/ssh/sshd_config.orig /usr/local/etc/ssh/sshd_config
+sudo vi /usr/local/etc/ssh/sshd_config
 # 编辑配置
 ```
 
