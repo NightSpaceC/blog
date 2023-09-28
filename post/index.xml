@@ -82,8 +82,8 @@ filetool.sh -b
 &lt;/span>&lt;/code>&lt;/pre>&lt;/td>
 &lt;td class="lntd">
 &lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">tce-load -wi openssh
-sudo cp /usr/local/etc/ssh/sshd_config.orig /usr/local/etc/sshsshd_config
-sudo vi /usr/local/etc/sshsshd_config
+sudo cp /usr/local/etc/ssh/sshd_config.orig /usr/local/etc/ssh/sshd_config
+sudo vi /usr/local/etc/ssh/sshd_config
 &lt;span class="c1"># 编辑配置&lt;/span>
 &lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>

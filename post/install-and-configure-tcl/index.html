@@ -3,7 +3,7 @@
 <meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="安装 配置DNS服务器 1 sudo printf &amp;#34;nameserver &amp;lt;DNS服务器IP&amp;gt;&amp;#34; &amp;gt; /etc/resolv.conf 安装安装程序 1 tce-load -wi tc-install 安装 1 sudo tc-install.sh 配置系统 设置密码 1 2 3 4 5 passwd sudo vi /opt/.filetool.lst #">
 <title>安装与配置 Tiny Core Linux</title>
 <link rel=canonical href=https://blog.nightspace.dynv6.net/post/install-and-configure-tcl/>
-<link rel=stylesheet href=/scss/style.min.ff300df33b80e2ac49809c825614392ed1c7b27591d65d3c4043602cd162e25f.css>
+<link rel=stylesheet href=/scss/style.min.abbd69b2908fdfcd5179898beaafd374514a86538d81639ddd2c58c06ae54e40.css>
 <script src=https://gcore.jsdelivr.net/gh/NightSpaceC/live2d-widget@master/autoload.js></script>
 <meta property="og:title" content="安装与配置 Tiny Core Linux">
 <meta property="og:description" content="安装 配置DNS服务器 1 sudo printf &amp;#34;nameserver &amp;lt;DNS服务器IP&amp;gt;&amp;#34; &amp;gt; /etc/resolv.conf 安装安装程序 1 tce-load -wi tc-install 安装 1 sudo tc-install.sh 配置系统 设置密码 1 2 3 4 5 passwd sudo vi /opt/.filetool.lst #">
@@ -207,8 +207,8 @@ filetool.sh -b
 </span></code></pre></td>
 <td class=lntd>
 <pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>tce-load -wi openssh
-sudo cp /usr/local/etc/ssh/sshd_config.orig /usr/local/etc/sshsshd_config
-sudo vi /usr/local/etc/sshsshd_config
+sudo cp /usr/local/etc/ssh/sshd_config.orig /usr/local/etc/ssh/sshd_config
+sudo vi /usr/local/etc/ssh/sshd_config
 <span class=c1># 编辑配置</span>
 </code></pre></td></tr></table>
 </div>
@@ -299,16 +299,16 @@ filetool.sh -b
 <div class=related-content>
 <div class="flex article-list--tile">
 <article>
-<a href=/post/smartdns-config/>
+<a href=/post/remove-aria2-limit/>
 <div class=article-details>
-<h2 class=article-title>SmartDNS 自用配置</h2>
+<h2 class=article-title>去除 aria2 下载连接数限制</h2>
 </div>
 </a>
 </article>
 <article>
-<a href=/post/remove-aria2-limit/>
+<a href=/post/smartdns-config/>
 <div class=article-details>
-<h2 class=article-title>去除 aria2 下载连接数限制</h2>
+<h2 class=article-title>SmartDNS 自用配置</h2>
 </div>
 </a>
 </article>
@@ -332,7 +332,7 @@ filetool.sh -b
 </section>
 <section class=powerby>
 Built with <a href=https://gohugo.io/ target=_blank rel=noopener>Hugo</a> <br>
-主题 <b><a href=https://github.com/CaiJimmy/hugo-theme-stack target=_blank rel=noopener data-version=3.17.0>Stack</a></b> 由 <a href=https://jimmycai.com target=_blank rel=noopener>Jimmy</a> 设计
+主题 <b><a href=https://github.com/CaiJimmy/hugo-theme-stack target=_blank rel=noopener data-version=3.20.0>Stack</a></b> 由 <a href=https://jimmycai.com target=_blank rel=noopener>Jimmy</a> 设计
 </section>
 </footer>
 <div class=pswp tabindex=-1 role=dialog aria-hidden=true>
