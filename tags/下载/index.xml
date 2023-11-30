@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>下载 on Night Space</title><link>https://blog.nightspace.dynv6.net/tags/%E4%B8%8B%E8%BD%BD/</link><description>Recent content in 下载 on Night Space</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Sun, 02 Apr 2023 11:54:00 +0800</lastBuildDate><atom:link href="https://blog.nightspace.dynv6.net/tags/%E4%B8%8B%E8%BD%BD/index.xml" rel="self" type="application/rss+xml"/><item><title>去除 aria2 下载连接数限制</title><link>https://blog.nightspace.dynv6.net/post/remove-aria2-limit/</link><pubDate>Sun, 02 Apr 2023 11:54:00 +0800</pubDate><guid>https://blog.nightspace.dynv6.net/post/remove-aria2-limit/</guid><description>&lt;p>aria2支持多连接下载，当网站连接限速时可大幅提升下载速度&lt;/p>
+&lt;p>aria2修改配置可使单服务器最多16连接&lt;/p>
+&lt;p>但对于KB级的限速，这依然难以接受&lt;/p>
+&lt;p>要想打破16连接的限制，需要修改源码再自己重新编译&lt;/p>
+&lt;p>经过一段时间的摸索，这是补丁&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;span class="lnt">13
+&lt;/span>&lt;span class="lnt">14
+&lt;/span>&lt;span class="lnt">15
+&lt;/span>&lt;span class="lnt">16
+&lt;/span>&lt;span class="lnt">17
+&lt;/span>&lt;span class="lnt">18
+&lt;/span>&lt;span class="lnt">19
+&lt;/span>&lt;span class="lnt">20
+&lt;/span>&lt;span class="lnt">21
+&lt;/span>&lt;span class="lnt">22
+&lt;/span>&lt;span class="lnt">23
+&lt;/span>&lt;span class="lnt">24
+&lt;/span>&lt;span class="lnt">25
+&lt;/span>&lt;span class="lnt">26
+&lt;/span>&lt;span class="lnt">27
+&lt;/span>&lt;span class="lnt">28
+&lt;/span>&lt;span class="lnt">29
+&lt;/span>&lt;span class="lnt">30
+&lt;/span>&lt;span class="lnt">31
+&lt;/span>&lt;span class="lnt">32
+&lt;/span>&lt;span class="lnt">33
+&lt;/span>&lt;span class="lnt">34
+&lt;/span>&lt;span class="lnt">35
+&lt;/span>&lt;span class="lnt">36
+&lt;/span>&lt;span class="lnt">37
+&lt;/span>&lt;span class="lnt">38
+&lt;/span>&lt;span class="lnt">39
+&lt;/span>&lt;span class="lnt">40
+&lt;/span>&lt;span class="lnt">41
+&lt;/span>&lt;span class="lnt">42
+&lt;/span>&lt;span class="lnt">43
+&lt;/span>&lt;span class="lnt">44
+&lt;/span>&lt;span class="lnt">45
+&lt;/span>&lt;span class="lnt">46
+&lt;/span>&lt;span class="lnt">47
+&lt;/span>&lt;span class="lnt">48
+&lt;/span>&lt;span class="lnt">49
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-patch" data-lang="patch">&lt;span class="line">&lt;span class="cl">&lt;span class="gd">--- Dockerfile.mingw
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="gd">&lt;/span>&lt;span class="gi">+++ Dockerfile.mingw
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="gi">&lt;/span>&lt;span class="gu">@@ -0,7 +0,7 @@
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="gu">&lt;/span> RUN curl -L -O https://gmplib.org/download/gmp/gmp-6.2.1.tar.lz &amp;amp;&amp;amp; \
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> curl -L -O https://github.com/libexpat/libexpat/releases/download/R_2_4_1/expat-2.4.1.tar.bz2 &amp;amp;&amp;amp; \
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> curl -L -O https://www.sqlite.org/2021/sqlite-autoconf-3360000.tar.gz &amp;amp;&amp;amp; \
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="gd">- curl -L -O http://zlib.net/zlib-1.2.11.tar.gz &amp;amp;&amp;amp; \
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="gd">&lt;/span>&lt;span class="gi">+ curl -L -O http://zlib.net/fossils/zlib-1.2.11.tar.gz &amp;amp;&amp;amp; \
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="gi">&lt;/span> curl -L -O https://c-ares.haxx.se/download/c-ares-1.17.2.tar.gz &amp;amp;&amp;amp; \
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> curl -L -O https://www.libssh2.org/download/libssh2-1.9.0.tar.gz &amp;amp;&amp;amp; \
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> curl -L -O https://github.com/libssh2/libssh2/commit/ba149e804ef653cc05ed9803dfc94519ce9328f7.patch
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="gu">@@ -0,6 +0,6 @@
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="gu">&lt;/span> LIBS=&amp;#34;-lws2_32&amp;#34; &amp;amp;&amp;amp; \
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> make install
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> ADD https://api.github.com/repos/aria2/aria2/git/refs/heads/master version.json
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="gd">-RUN git clone https://github.com/aria2/aria2 &amp;amp;&amp;amp; \
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="gd">- cd aria2 &amp;amp;&amp;amp; autoreconf -i &amp;amp;&amp;amp; ./mingw-config &amp;amp;&amp;amp; make &amp;amp;&amp;amp; \
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="gd">&lt;/span>&lt;span class="gi">+COPY . /aria2/
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="gi">+RUN cd aria2 &amp;amp;&amp;amp; autoreconf -i &amp;amp;&amp;amp; ./mingw-config &amp;amp;&amp;amp; make &amp;amp;&amp;amp; \
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="gi">&lt;/span> $HOST-strip src/aria2c.exe
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="gd">--- src/OptionHandlerFactory.cc
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="gd">&lt;/span>&lt;span class="gi">+++ src/OptionHandlerFactory.cc
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="gi">&lt;/span>&lt;span class="gu">@@ -0,7 +0,7 @@
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="gu">&lt;/span> {
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> OptionHandler* op(new NumberOptionHandler(PREF_MAX_CONNECTION_PER_SERVER,
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> TEXT_MAX_CONNECTION_PER_SERVER,
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="gd">- &amp;#34;1&amp;#34;, 1, 16, &amp;#39;x&amp;#39;));
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="gd">&lt;/span>&lt;span class="gi">+ &amp;#34;1&amp;#34;, 1, -1, &amp;#39;x&amp;#39;));
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="gi">&lt;/span> op-&amp;gt;addTag(TAG_BASIC);
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> op-&amp;gt;addTag(TAG_FTP);
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> op-&amp;gt;addTag(TAG_HTTP);
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="gu">@@ -0,7 +0,7 @@
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="gu">&lt;/span> }
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> {
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> OptionHandler* op(new UnitNumberOptionHandler(
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="gd">- PREF_MIN_SPLIT_SIZE, TEXT_MIN_SPLIT_SIZE, &amp;#34;20M&amp;#34;, 1_m, 1_g, &amp;#39;k&amp;#39;));
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="gd">&lt;/span>&lt;span class="gi">+ PREF_MIN_SPLIT_SIZE, TEXT_MIN_SPLIT_SIZE, &amp;#34;20M&amp;#34;, 1, 1_g, &amp;#39;k&amp;#39;));
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="gi">&lt;/span> op-&amp;gt;addTag(TAG_BASIC);
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> op-&amp;gt;addTag(TAG_FTP);
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> op-&amp;gt;addTag(TAG_HTTP);
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="gu">@@ -0,7 +0,7 @@
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="gu">&lt;/span> }
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> {
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> OptionHandler* op(new UnitNumberOptionHandler(
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="gd">- PREF_PIECE_LENGTH, TEXT_PIECE_LENGTH, &amp;#34;1M&amp;#34;, 1_m, 1_g));
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="gd">&lt;/span>&lt;span class="gi">+ PREF_PIECE_LENGTH, TEXT_PIECE_LENGTH, &amp;#34;1M&amp;#34;, 1, 1_g));
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="gi">&lt;/span> op-&amp;gt;addTag(TAG_ADVANCED);
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> op-&amp;gt;addTag(TAG_FTP);
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> op-&amp;gt;addTag(TAG_HTTP);
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>操作（Linux编译Windows平台）：&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">nano aria2.patch &lt;span class="c1"># 复制补丁文件&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">git clone https://github.com/aria2/aria2.git
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nb">cd&lt;/span> aria2
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">patch --no-backup-if-mismatch -p0 -i ../aria2.patch
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">sudo docker build -f Dockerfile.mingw -t aria2-mingw .
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nb">cd&lt;/span> ..
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nv">id&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="k">$(&lt;/span>sudo docker create aria2-mingw&lt;span class="k">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">sudo docker cp &lt;span class="nv">$id&lt;/span>:/aria2/src/aria2c.exe aria2c.exe
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">sudo docker rm -v &lt;span class="nv">$id&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nb">unset&lt;/span> id
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">sudo chmod &lt;span class="m">777&lt;/span> aria2c.exe
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div></description></item></channel></rss>

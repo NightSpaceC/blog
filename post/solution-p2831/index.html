@@ -1,154 +1,14 @@
-<!doctype html><html lang=zh-cn dir=ltr>
-<head><meta charset=utf-8>
-<meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="题目分析 已知 $n$ 个在第一象限的点，最少需要几条形如 $y=ax^2 + bx(a&amp;lt;0)$ 的曲线可以覆盖所有点 思路 显然，只有那些至少经过一个点的曲线是需要考虑的 因此，我们枚举每">
-<title>P2831 [NOIP2016 提高组] 愤怒的小鸟</title>
-<link rel=canonical href=https://blog.nightspace.dynv6.net/post/solution-p2831/>
-<link rel=stylesheet href=/scss/style.min.abbd69b2908fdfcd5179898beaafd374514a86538d81639ddd2c58c06ae54e40.css>
-<script src=https://gcore.jsdelivr.net/gh/NightSpaceC/live2d-widget@master/autoload.js></script>
-<meta property="og:title" content="P2831 [NOIP2016 提高组] 愤怒的小鸟">
-<meta property="og:description" content="题目分析 已知 $n$ 个在第一象限的点，最少需要几条形如 $y=ax^2 + bx(a&amp;lt;0)$ 的曲线可以覆盖所有点 思路 显然，只有那些至少经过一个点的曲线是需要考虑的 因此，我们枚举每">
-<meta property="og:url" content="https://blog.nightspace.dynv6.net/post/solution-p2831/">
-<meta property="og:site_name" content="Night Space">
-<meta property="og:type" content="article"><meta property="article:section" content="Post"><meta property="article:tag" content="算法"><meta property="article:tag" content="题解"><meta property="article:published_time" content="2022-08-07T15:14:00+08:00"><meta property="article:modified_time" content="2022-09-03T22:12:00+08:00">
-<meta name=twitter:title content="P2831 [NOIP2016 提高组] 愤怒的小鸟">
-<meta name=twitter:description content="题目分析 已知 $n$ 个在第一象限的点，最少需要几条形如 $y=ax^2 + bx(a&amp;lt;0)$ 的曲线可以覆盖所有点 思路 显然，只有那些至少经过一个点的曲线是需要考虑的 因此，我们枚举每">
-</head>
-<body class=article-page>
-<script>(function(){const a='StackColorScheme';localStorage.getItem(a)||localStorage.setItem(a,"auto")})()</script><script>(function(){const b='StackColorScheme',a=localStorage.getItem(b),c=window.matchMedia('(prefers-color-scheme: dark)').matches===!0;a=='dark'||a==='auto'&&c?document.documentElement.dataset.scheme='dark':document.documentElement.dataset.scheme='light'})()</script>
-<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky">
-<button class="hamburger hamburger--spin" type=button id=toggle-menu aria-label=切换菜单>
-<span class=hamburger-box>
-<span class=hamburger-inner></span>
-</span>
-</button>
-<header>
-<figure class=site-avatar>
-<a href=/>
-<img src=https://avatars.githubusercontent.com/u/63776734 width=300 height=300 class=site-logo loading=lazy alt=Avatar>
-</a>
-</figure>
-<div class=site-meta>
-<h1 class=site-name><a href=/>Night Space</a></h1>
-<h2 class=site-description>为不折腾而折腾，才是折腾的最高境界</h2>
-</div>
-</header><ol class=social-menu>
-<li>
-<a href=mailto:NightSpaceC@outlook.com target=_blank title=EMail rel=me><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-mail" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><rect x="3" y="5" width="18" height="14" rx="2"/><polyline points="3 7 12 13 21 7"/></svg>
-</a>
-</li>
-<li>
-<a href=https://github.com/NightSpaceC target=_blank title=GitHub rel=me><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6.0 00-1.3-3.2 4.2 4.2.0 00-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3.0 00-6.2.0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2.0 00-.1 3.2A4.6 4.6.0 004 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg>
-</a>
-</li>
-<li>
-<a href=https://blog.nightspace.dynv6.net/index.xml target=_blank title=RSS rel=me><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-rss" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="5" cy="19" r="1"/><path d="M4 4a16 16 0 0116 16"/><path d="M4 11a9 9 0 019 9"/></svg>
-</a>
-</li>
-</ol><ol class=menu id=main-menu>
-<li>
-<a href=/><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><polyline points="5 12 3 12 12 3 21 12 19 12"/><path d="M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7"/><path d="M9 21v-6a2 2 0 012-2h2a2 2 0 012 2v6"/></svg>
-<span>首页</span>
-</a>
-</li>
-<li>
-<a href=/page/search/><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="10" cy="10" r="7"/><line x1="21" y1="21" x2="15" y2="15"/></svg>
-<span>搜索</span>
-</a>
-</li>
-<li>
-<a href=/page/archives/><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><rect x="3" y="4" width="18" height="4" rx="2"/><path d="M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8"/><line x1="10" y1="12" x2="14" y2="12"/></svg>
-<span>归档</span>
-</a>
-</li>
-<li>
-<a href=/page/tools/><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-tools" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 21h4L20 8a1.5 1.5.0 00-4-4L3 17v4"/><line x1="14.5" y1="5.5" x2="18.5" y2="9.5"/><polyline points="12 8 7 3 3 7 8 12"/><line x1="7" y1="8" x2="5.5" y2="9.5"/><polyline points="16 12 21 17 17 21 12 16"/><line x1="16" y1="17" x2="14.5" y2="18.5"/></svg>
-<span>工具箱</span>
-</a>
-</li>
-<li>
-<a href=/page/about/><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="12" cy="7" r="4"/><path d="M6 21v-2a4 4 0 014-4h4a4 4 0 014 4v2"/></svg>
-<span>关于</span>
-</a>
-</li>
-<div class=menu-bottom-section>
-<li id=dark-mode-toggle><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="8" cy="12" r="2"/><rect x="2" y="6" width="20" height="12" rx="6"/></svg><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="16" cy="12" r="2"/><rect x="2" y="6" width="20" height="12" rx="6"/></svg>
-<span>暗色模式</span>
-</li>
-</div>
-</ol>
-</aside>
-<aside class="sidebar right-sidebar sticky">
-<section class="widget archives">
-<div class=widget-icon><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><line x1="5" y1="9" x2="19" y2="9"/><line x1="5" y1="15" x2="19" y2="15"/><line x1="11" y1="4" x2="7" y2="20"/><line x1="17" y1="4" x2="13" y2="20"/></svg>
-</div>
-<h2 class="widget-title section-title">目录</h2>
-<div class=widget--toc>
-<nav id=TableOfContents>
-<ol>
-<li><a href=#题目分析>题目分析</a></li>
-<li><a href=#思路>思路</a></li>
-<li><a href=#code>Code</a></li>
-</ol>
-</nav>
-</div>
-</section>
-</aside>
-<main class="main full-width">
-<article class=main-article>
-<header class=article-header>
-<div class=article-details>
-<header class=article-category>
-<a href=/categories/%E7%AE%97%E6%B3%95/>
-算法
-</a>
-<a href=/categories/%E9%A2%98%E8%A7%A3/>
-题解
-</a>
-</header>
-<div class=article-title-wrapper>
-<h2 class=article-title>
-<a href=/post/solution-p2831/>P2831 [NOIP2016 提高组] 愤怒的小鸟</a>
-</h2>
-</div>
-<footer class=article-time>
-<div><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><path d="M11.795 21H5a2 2 0 01-2-2V7a2 2 0 012-2h12a2 2 0 012 2v4"/><circle cx="18" cy="18" r="4"/><path d="M15 3v4"/><path d="M7 3v4"/><path d="M3 11h16"/><path d="M18 16.496V18l1 1"/></svg>
-<time class=article-time--published>Aug 07, 2022</time>
-</div>
-<div><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 15"/></svg>
-<time class=article-time--reading>
-阅读时长: 2 分钟
-</time>
-</div>
-</footer>
-</div>
-</header>
-<section class=article-content>
-<h1 id=题目分析>题目分析</h1>
-<p>已知 $n$ 个在第一象限的点，最少需要几条形如 $y=ax^2 + bx(a&lt;0)$ 的曲线可以覆盖所有点</p>
-<h1 id=思路>思路</h1>
-<p>显然，只有那些至少经过一个点的曲线是需要考虑的</p>
-<p>因此，我们枚举每一个点对 $(x_1,y_1)$ $(x_2,y_2)$ ，设经过这两点的曲线为 $y=ax^2 + bx$</p>
-<p>解得</p>
-<p>$$
+<!doctype html><html lang=zh-cn dir=ltr><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="题目分析 已知 $n$ 个在第一象限的点，最少需要几条形如 $y=ax^2 + bx(a&amp;lt;0)$ 的曲线可以覆盖所有点 思路 显然，只有那些至少经过一个点的曲线是需要考虑的 因此，我们枚举每"><title>P2831 [NOIP2016 提高组] 愤怒的小鸟</title>
+<link rel=canonical href=https://blog.nightspace.dynv6.net/post/solution-p2831/><link rel=stylesheet href=/scss/style.min.abbd69b2908fdfcd5179898beaafd374514a86538d81639ddd2c58c06ae54e40.css><script src=https://gcore.jsdelivr.net/gh/NightSpaceC/live2d-widget@master/autoload.js></script><meta property="og:title" content="P2831 [NOIP2016 提高组] 愤怒的小鸟"><meta property="og:description" content="题目分析 已知 $n$ 个在第一象限的点，最少需要几条形如 $y=ax^2 + bx(a&amp;lt;0)$ 的曲线可以覆盖所有点 思路 显然，只有那些至少经过一个点的曲线是需要考虑的 因此，我们枚举每"><meta property="og:url" content="https://blog.nightspace.dynv6.net/post/solution-p2831/"><meta property="og:site_name" content="Night Space"><meta property="og:type" content="article"><meta property="article:section" content="Post"><meta property="article:tag" content="算法"><meta property="article:tag" content="题解"><meta property="article:published_time" content="2022-08-07T15:14:00+08:00"><meta property="article:modified_time" content="2022-09-03T22:12:00+08:00"><meta name=twitter:title content="P2831 [NOIP2016 提高组] 愤怒的小鸟"><meta name=twitter:description content="题目分析 已知 $n$ 个在第一象限的点，最少需要几条形如 $y=ax^2 + bx(a&amp;lt;0)$ 的曲线可以覆盖所有点 思路 显然，只有那些至少经过一个点的曲线是需要考虑的 因此，我们枚举每"></head><body class=article-page><script>(function(){const e="StackColorScheme";localStorage.getItem(e)||localStorage.setItem(e,"auto")})()</script><script>(function(){const t="StackColorScheme",e=localStorage.getItem(t),n=window.matchMedia("(prefers-color-scheme: dark)").matches===!0;e=="dark"||e==="auto"&&n?document.documentElement.dataset.scheme="dark":document.documentElement.dataset.scheme="light"})()</script><div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky"><button class="hamburger hamburger--spin" type=button id=toggle-menu aria-label=切换菜单>
+<span class=hamburger-box><span class=hamburger-inner></span></span></button><header><figure class=site-avatar><a href=/><img src=https://avatars.githubusercontent.com/u/63776734 width=300 height=300 class=site-logo loading=lazy alt=Avatar></a></figure><div class=site-meta><h1 class=site-name><a href=/>Night Space</a></h1><h2 class=site-description>为不折腾而折腾，才是折腾的最高境界</h2></div></header><ol class=social-menu><li><a href=mailto:NightSpaceC@outlook.com target=_blank title=EMail rel=me><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-mail" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><rect x="3" y="5" width="18" height="14" rx="2"/><polyline points="3 7 12 13 21 7"/></svg></a></li><li><a href=https://github.com/NightSpaceC target=_blank title=GitHub rel=me><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6.0 00-1.3-3.2 4.2 4.2.0 00-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3.0 00-6.2.0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2.0 00-.1 3.2A4.6 4.6.0 004 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg></a></li><li><a href=https://blog.nightspace.dynv6.net/index.xml target=_blank title=RSS rel=me><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-rss" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="5" cy="19" r="1"/><path d="M4 4a16 16 0 0116 16"/><path d="M4 11a9 9 0 019 9"/></svg></a></li></ol><ol class=menu id=main-menu><li><a href=/><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><polyline points="5 12 3 12 12 3 21 12 19 12"/><path d="M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7"/><path d="M9 21v-6a2 2 0 012-2h2a2 2 0 012 2v6"/></svg><span>首页</span></a></li><li><a href=/page/search/><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="10" cy="10" r="7"/><line x1="21" y1="21" x2="15" y2="15"/></svg><span>搜索</span></a></li><li><a href=/page/archives/><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><rect x="3" y="4" width="18" height="4" rx="2"/><path d="M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8"/><line x1="10" y1="12" x2="14" y2="12"/></svg><span>归档</span></a></li><li><a href=/page/tools/><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-tools" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 21h4L20 8a1.5 1.5.0 00-4-4L3 17v4"/><line x1="14.5" y1="5.5" x2="18.5" y2="9.5"/><polyline points="12 8 7 3 3 7 8 12"/><line x1="7" y1="8" x2="5.5" y2="9.5"/><polyline points="16 12 21 17 17 21 12 16"/><line x1="16" y1="17" x2="14.5" y2="18.5"/></svg><span>工具箱</span></a></li><li><a href=/page/about/><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="12" cy="7" r="4"/><path d="M6 21v-2a4 4 0 014-4h4a4 4 0 014 4v2"/></svg><span>关于</span></a></li><div class=menu-bottom-section><li id=dark-mode-toggle><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="8" cy="12" r="2"/><rect x="2" y="6" width="20" height="12" rx="6"/></svg><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="16" cy="12" r="2"/><rect x="2" y="6" width="20" height="12" rx="6"/></svg><span>暗色模式</span></li></div></ol></aside><aside class="sidebar right-sidebar sticky"><section class="widget archives"><div class=widget-icon><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><line x1="5" y1="9" x2="19" y2="9"/><line x1="5" y1="15" x2="19" y2="15"/><line x1="11" y1="4" x2="7" y2="20"/><line x1="17" y1="4" x2="13" y2="20"/></svg></div><h2 class="widget-title section-title">目录</h2><div class=widget--toc><nav id=TableOfContents><ol><li><a href=#题目分析>题目分析</a></li><li><a href=#思路>思路</a></li><li><a href=#code>Code</a></li></ol></nav></div></section></aside><main class="main full-width"><article class=main-article><header class=article-header><div class=article-details><header class=article-category><a href=/categories/%E7%AE%97%E6%B3%95/>算法
+</a><a href=/categories/%E9%A2%98%E8%A7%A3/>题解</a></header><div class=article-title-wrapper><h2 class=article-title><a href=/post/solution-p2831/>P2831 [NOIP2016 提高组] 愤怒的小鸟</a></h2></div><footer class=article-time><div><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><path d="M11.795 21H5a2 2 0 01-2-2V7a2 2 0 012-2h12a2 2 0 012 2v4"/><circle cx="18" cy="18" r="4"/><path d="M15 3v4"/><path d="M7 3v4"/><path d="M3 11h16"/><path d="M18 16.496V18l1 1"/></svg><time class=article-time--published>Aug 07, 2022</time></div><div><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 15"/></svg><time class=article-time--reading>阅读时长: 2 分钟</time></div></footer></div></header><section class=article-content><h1 id=题目分析>题目分析</h1><p>已知 $n$ 个在第一象限的点，最少需要几条形如 $y=ax^2 + bx(a&lt;0)$ 的曲线可以覆盖所有点</p><h1 id=思路>思路</h1><p>显然，只有那些至少经过一个点的曲线是需要考虑的</p><p>因此，我们枚举每一个点对 $(x_1,y_1)$ $(x_2,y_2)$ ，设经过这两点的曲线为 $y=ax^2 + bx$</p><p>解得</p><p>$$
 \left\{
 \begin{array}{l}
 a=\dfrac{x_2y_1-x_1y_2}{x_1x_2(x_1-x_2)}\\
 b=\dfrac{y_1-ax_1^2}{x_1}
 \end{array}
 \right.
-$$</p>
-<p>另外，我们还要为每个点单独添加一条经过它的曲线</p>
-<p>因为点的数量较少，我们可以通过状态压缩对每条曲线进行编码</p>
-<p>对于每一条曲线，枚举每一个点，若 $(x_i,y_i)$ 在该曲线上，则将该曲线编码的第 $i - 1$ 为设为 $1$</p>
-<p>每条曲线的编码表示了它所经过的点</p>
-<p>根据编码进行去重</p>
-<p>我们还可以对每个状态进行编码，若 $(x_i,y_i)$ 已被至少一条曲线经过，则将该状态编码的第 $i - 1$ 为设为 $1$</p>
-<p>通过加入一条曲线，一个状态可以转移到该状态编码与该曲线编码按位或的结果代表的状态，则可在该状态与按位或的结果代表的状态间连边</p>
-<p>从初始状态 $0$ 开始计算最短路即可</p>
-<h1 id=code>Code</h1>
-<div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt> 1
+$$</p><p>另外，我们还要为每个点单独添加一条经过它的曲线</p><p>因为点的数量较少，我们可以通过状态压缩对每条曲线进行编码</p><p>对于每一条曲线，枚举每一个点，若 $(x_i,y_i)$ 在该曲线上，则将该曲线编码的第 $i - 1$ 为设为 $1$</p><p>每条曲线的编码表示了它所经过的点</p><p>根据编码进行去重</p><p>我们还可以对每个状态进行编码，若 $(x_i,y_i)$ 已被至少一条曲线经过，则将该状态编码的第 $i - 1$ 为设为 $1$</p><p>通过加入一条曲线，一个状态可以转移到该状态编码与该曲线编码按位或的结果代表的状态，则可在该状态与按位或的结果代表的状态间连边</p><p>从初始状态 $0$ 开始计算最短路即可</p><h1 id=code>Code</h1><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
 </span><span class=lnt> 2
 </span><span class=lnt> 3
 </span><span class=lnt> 4
@@ -234,208 +94,98 @@ $$</p>
 </span><span class=lnt>84
 </span><span class=lnt>85
 </span><span class=lnt>86
-</span></code></pre></td>
-<td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-cpp data-lang=cpp><span class=cp>#include</span> <span class=cpf>&lt;bits/stdc++.h&gt;</span><span class=cp>
-</span><span class=cp></span><span class=k>using</span> <span class=k>namespace</span> <span class=n>std</span><span class=p>;</span>
-<span class=k>struct</span> <span class=nc>Pig</span> <span class=p>{</span>
-    <span class=kt>double</span> <span class=n>x</span><span class=p>,</span> <span class=n>y</span><span class=p>;</span>
-<span class=p>};</span>
-<span class=k>struct</span> <span class=nc>Line</span> <span class=p>{</span>
-    <span class=kt>double</span> <span class=n>a</span><span class=p>,</span> <span class=n>b</span><span class=p>;</span>
-<span class=p>};</span>
-<span class=k>const</span> <span class=kt>double</span> <span class=n>EPS</span> <span class=o>=</span> <span class=mf>1e-7</span><span class=p>;</span>
-<span class=kt>int</span> <span class=n>T</span><span class=p>;</span>
-<span class=kt>int</span> <span class=n>n</span><span class=p>,</span> <span class=n>m</span><span class=p>;</span>
-<span class=n>Pig</span> <span class=n>pig</span><span class=p>[</span><span class=mi>21</span><span class=p>];</span>
-<span class=n>vector</span><span class=o>&lt;</span><span class=kt>uint32_t</span><span class=o>&gt;</span> <span class=n>line</span><span class=p>;</span>
-<span class=kt>int</span> <span class=n>minw</span><span class=p>[</span><span class=mi>262144</span><span class=p>];</span>
-<span class=n>Line</span> <span class=nf>getLineByPig</span><span class=p>(</span><span class=k>const</span> <span class=n>Pig</span> <span class=o>&amp;</span><span class=n>a</span><span class=p>,</span> <span class=k>const</span> <span class=n>Pig</span> <span class=o>&amp;</span><span class=n>b</span><span class=p>)</span> <span class=p>{</span>
-    <span class=n>Line</span> <span class=n>line</span><span class=p>;</span>
-    <span class=n>line</span><span class=p>.</span><span class=n>a</span> <span class=o>=</span> <span class=p>(</span><span class=n>b</span><span class=p>.</span><span class=n>x</span> <span class=o>*</span> <span class=n>a</span><span class=p>.</span><span class=n>y</span> <span class=o>-</span> <span class=n>a</span><span class=p>.</span><span class=n>x</span> <span class=o>*</span> <span class=n>b</span><span class=p>.</span><span class=n>y</span><span class=p>)</span> <span class=o>/</span> <span class=p>(</span><span class=n>a</span><span class=p>.</span><span class=n>x</span> <span class=o>*</span> <span class=n>b</span><span class=p>.</span><span class=n>x</span> <span class=o>*</span> <span class=p>(</span><span class=n>a</span><span class=p>.</span><span class=n>x</span> <span class=o>-</span> <span class=n>b</span><span class=p>.</span><span class=n>x</span><span class=p>));</span>
-    <span class=n>line</span><span class=p>.</span><span class=n>b</span> <span class=o>=</span> <span class=p>(</span><span class=n>a</span><span class=p>.</span><span class=n>y</span> <span class=o>-</span> <span class=n>line</span><span class=p>.</span><span class=n>a</span> <span class=o>*</span> <span class=n>a</span><span class=p>.</span><span class=n>x</span> <span class=o>*</span> <span class=n>a</span><span class=p>.</span><span class=n>x</span><span class=p>)</span> <span class=o>/</span> <span class=n>a</span><span class=p>.</span><span class=n>x</span><span class=p>;</span>
-    <span class=k>return</span> <span class=n>line</span><span class=p>;</span>
-<span class=p>}</span>
-<span class=kt>uint32_t</span> <span class=nf>encodeLine</span><span class=p>(</span><span class=k>const</span> <span class=n>Line</span> <span class=o>&amp;</span><span class=n>line</span><span class=p>)</span> <span class=p>{</span>
-    <span class=k>if</span><span class=p>(</span><span class=n>line</span><span class=p>.</span><span class=n>a</span> <span class=o>&gt;=</span> <span class=mi>0</span><span class=p>)</span> <span class=p>{</span>
-        <span class=k>return</span> <span class=mi>0</span><span class=p>;</span>
-    <span class=p>}</span>
-    <span class=kt>uint32_t</span> <span class=n>code</span> <span class=o>=</span> <span class=mi>0</span><span class=p>;</span>
-    <span class=k>for</span><span class=p>(</span><span class=kt>int</span> <span class=n>i</span> <span class=o>=</span> <span class=mi>1</span><span class=p>;</span> <span class=n>i</span> <span class=o>&lt;=</span> <span class=n>n</span><span class=p>;</span> <span class=n>i</span><span class=o>++</span><span class=p>)</span> <span class=p>{</span>
-        <span class=k>if</span><span class=p>(</span><span class=n>abs</span><span class=p>(</span><span class=n>line</span><span class=p>.</span><span class=n>a</span> <span class=o>*</span> <span class=n>pig</span><span class=p>[</span><span class=n>i</span><span class=p>].</span><span class=n>x</span> <span class=o>*</span> <span class=n>pig</span><span class=p>[</span><span class=n>i</span><span class=p>].</span><span class=n>x</span> <span class=o>+</span> <span class=n>line</span><span class=p>.</span><span class=n>b</span> <span class=o>*</span> <span class=n>pig</span><span class=p>[</span><span class=n>i</span><span class=p>].</span><span class=n>x</span> <span class=o>-</span> <span class=n>pig</span><span class=p>[</span><span class=n>i</span><span class=p>].</span><span class=n>y</span><span class=p>)</span> <span class=o>&lt;=</span> <span class=n>EPS</span><span class=p>)</span> <span class=p>{</span>
-            <span class=n>code</span> <span class=o>|=</span> <span class=p>(</span><span class=mi>1</span> <span class=o>&lt;&lt;</span> <span class=p>(</span><span class=n>i</span> <span class=o>-</span> <span class=mi>1</span><span class=p>));</span>
-        <span class=p>}</span>
-    <span class=p>}</span>
-    <span class=k>return</span> <span class=n>code</span><span class=p>;</span>
-<span class=p>}</span>
-<span class=kt>void</span> <span class=nf>bfs</span><span class=p>()</span> <span class=p>{</span>
-    <span class=n>memset</span><span class=p>(</span><span class=n>minw</span><span class=p>,</span> <span class=mh>0x3f</span><span class=p>,</span> <span class=k>sizeof</span><span class=p>(</span><span class=n>minw</span><span class=p>));</span>
-    <span class=n>queue</span><span class=o>&lt;</span><span class=kt>uint32_t</span><span class=o>&gt;</span> <span class=n>q</span><span class=p>;</span>
-    <span class=n>minw</span><span class=p>[</span><span class=mi>0</span><span class=p>]</span> <span class=o>=</span> <span class=mi>0</span><span class=p>;</span>
-    <span class=n>q</span><span class=p>.</span><span class=n>push</span><span class=p>(</span><span class=mi>0</span><span class=p>);</span>
-    <span class=k>while</span><span class=p>(</span><span class=o>!</span><span class=n>q</span><span class=p>.</span><span class=n>empty</span><span class=p>())</span> <span class=p>{</span>
-        <span class=kt>uint32_t</span> <span class=n>at</span> <span class=o>=</span> <span class=n>q</span><span class=p>.</span><span class=n>front</span><span class=p>();</span>
-        <span class=n>q</span><span class=p>.</span><span class=n>pop</span><span class=p>();</span>
-        <span class=k>for</span><span class=p>(</span><span class=k>auto</span> <span class=n>i</span> <span class=o>=</span> <span class=n>line</span><span class=p>.</span><span class=n>begin</span><span class=p>();</span> <span class=n>i</span> <span class=o>!=</span> <span class=n>line</span><span class=p>.</span><span class=n>end</span><span class=p>();</span> <span class=n>i</span><span class=o>++</span><span class=p>)</span> <span class=p>{</span>
-            <span class=kt>uint32_t</span> <span class=n>new_at</span> <span class=o>=</span> <span class=n>at</span> <span class=o>|</span> <span class=o>*</span><span class=n>i</span><span class=p>;</span>
-            <span class=k>if</span><span class=p>(</span><span class=n>minw</span><span class=p>[</span><span class=n>new_at</span><span class=p>]</span> <span class=o>&gt;</span> <span class=n>minw</span><span class=p>[</span><span class=n>at</span><span class=p>]</span> <span class=o>+</span> <span class=mi>1</span><span class=p>)</span> <span class=p>{</span>
-                <span class=n>minw</span><span class=p>[</span><span class=n>new_at</span><span class=p>]</span> <span class=o>=</span> <span class=n>minw</span><span class=p>[</span><span class=n>at</span><span class=p>]</span> <span class=o>+</span> <span class=mi>1</span><span class=p>;</span>
-                <span class=k>if</span><span class=p>(</span><span class=n>new_at</span> <span class=o>==</span> <span class=p>(</span><span class=mi>1</span> <span class=o>&lt;&lt;</span> <span class=n>n</span><span class=p>)</span> <span class=o>-</span> <span class=mi>1</span><span class=p>)</span> <span class=p>{</span>
-                    <span class=k>return</span><span class=p>;</span>
-                <span class=p>}</span>
-                <span class=n>q</span><span class=p>.</span><span class=n>push</span><span class=p>(</span><span class=n>new_at</span><span class=p>);</span>
-            <span class=p>}</span>
-        <span class=p>}</span>
-    <span class=p>}</span>
-<span class=p>}</span>
-<span class=kt>void</span> <span class=nf>solve</span><span class=p>()</span> <span class=p>{</span>
-    <span class=n>line</span><span class=p>.</span><span class=n>clear</span><span class=p>();</span>
-    <span class=n>cin</span> <span class=o>&gt;&gt;</span> <span class=n>n</span> <span class=o>&gt;&gt;</span> <span class=n>m</span><span class=p>;</span>
-    <span class=k>for</span><span class=p>(</span><span class=kt>int</span> <span class=n>i</span> <span class=o>=</span> <span class=mi>1</span><span class=p>;</span> <span class=n>i</span> <span class=o>&lt;=</span> <span class=n>n</span><span class=p>;</span> <span class=n>i</span><span class=o>++</span><span class=p>)</span> <span class=p>{</span>
-        <span class=n>cin</span> <span class=o>&gt;&gt;</span> <span class=n>pig</span><span class=p>[</span><span class=n>i</span><span class=p>].</span><span class=n>x</span> <span class=o>&gt;&gt;</span> <span class=n>pig</span><span class=p>[</span><span class=n>i</span><span class=p>].</span><span class=n>y</span><span class=p>;</span>
-    <span class=p>}</span>
-    <span class=k>for</span><span class=p>(</span><span class=kt>int</span> <span class=n>i</span> <span class=o>=</span> <span class=mi>1</span><span class=p>;</span> <span class=n>i</span> <span class=o>&lt;=</span> <span class=n>n</span><span class=p>;</span> <span class=n>i</span><span class=o>++</span><span class=p>)</span> <span class=p>{</span>
-        <span class=k>for</span><span class=p>(</span><span class=kt>int</span> <span class=n>j</span> <span class=o>=</span> <span class=n>i</span> <span class=o>+</span> <span class=mi>1</span><span class=p>;</span> <span class=n>j</span> <span class=o>&lt;=</span> <span class=n>n</span><span class=p>;</span> <span class=n>j</span><span class=o>++</span><span class=p>)</span> <span class=p>{</span>
-            <span class=n>line</span><span class=p>.</span><span class=n>push_back</span><span class=p>(</span><span class=n>encodeLine</span><span class=p>(</span><span class=n>getLineByPig</span><span class=p>(</span><span class=n>pig</span><span class=p>[</span><span class=n>i</span><span class=p>],</span> <span class=n>pig</span><span class=p>[</span><span class=n>j</span><span class=p>])));</span>
-        <span class=p>}</span>
-        <span class=n>line</span><span class=p>.</span><span class=n>push_back</span><span class=p>(</span><span class=mi>1</span> <span class=o>&lt;&lt;</span> <span class=p>(</span><span class=n>i</span> <span class=o>-</span> <span class=mi>1</span><span class=p>));</span>
-    <span class=p>}</span>
-    <span class=p>{</span>
-        <span class=n>set</span><span class=o>&lt;</span><span class=kt>uint32_t</span><span class=o>&gt;</span> <span class=n>tmp</span><span class=p>;</span>
-        <span class=k>for</span><span class=p>(</span><span class=k>auto</span> <span class=n>i</span> <span class=o>=</span> <span class=n>line</span><span class=p>.</span><span class=n>begin</span><span class=p>();</span> <span class=n>i</span> <span class=o>!=</span> <span class=n>line</span><span class=p>.</span><span class=n>end</span><span class=p>();</span> <span class=n>i</span><span class=o>++</span><span class=p>)</span> <span class=p>{</span>
-            <span class=n>tmp</span><span class=p>.</span><span class=n>insert</span><span class=p>(</span><span class=o>*</span><span class=n>i</span><span class=p>);</span>
-        <span class=p>}</span>
-        <span class=n>line</span><span class=p>.</span><span class=n>clear</span><span class=p>();</span>
-        <span class=k>for</span><span class=p>(</span><span class=k>auto</span> <span class=n>i</span> <span class=o>=</span> <span class=n>tmp</span><span class=p>.</span><span class=n>begin</span><span class=p>();</span> <span class=n>i</span> <span class=o>!=</span> <span class=n>tmp</span><span class=p>.</span><span class=n>end</span><span class=p>();</span> <span class=n>i</span><span class=o>++</span><span class=p>)</span> <span class=p>{</span>
-            <span class=n>line</span><span class=p>.</span><span class=n>push_back</span><span class=p>(</span><span class=o>*</span><span class=n>i</span><span class=p>);</span>
-        <span class=p>}</span>
-    <span class=p>}</span>
-    <span class=n>bfs</span><span class=p>();</span>
-    <span class=n>cout</span> <span class=o>&lt;&lt;</span> <span class=n>minw</span><span class=p>[(</span><span class=mi>1</span> <span class=o>&lt;&lt;</span> <span class=n>n</span><span class=p>)</span> <span class=o>-</span> <span class=mi>1</span><span class=p>]</span> <span class=o>&lt;&lt;</span> <span class=n>endl</span><span class=p>;</span>
-<span class=p>}</span>
-<span class=kt>int</span> <span class=nf>main</span><span class=p>()</span> <span class=p>{</span>
-    <span class=n>ios</span><span class=o>::</span><span class=n>sync_with_stdio</span><span class=p>(</span><span class=nb>false</span><span class=p>);</span>
-    <span class=n>cin</span><span class=p>.</span><span class=n>tie</span><span class=p>(</span><span class=k>nullptr</span><span class=p>);</span>
-    <span class=n>cout</span><span class=p>.</span><span class=n>tie</span><span class=p>(</span><span class=k>nullptr</span><span class=p>);</span>
-    <span class=n>cin</span> <span class=o>&gt;&gt;</span> <span class=n>T</span><span class=p>;</span>
-    <span class=k>for</span><span class=p>(</span><span class=kt>int</span> <span class=n>i</span> <span class=o>=</span> <span class=mi>1</span><span class=p>;</span> <span class=n>i</span> <span class=o>&lt;=</span> <span class=n>T</span><span class=p>;</span> <span class=n>i</span><span class=o>++</span><span class=p>)</span> <span class=p>{</span>
-        <span class=n>solve</span><span class=p>();</span>
-    <span class=p>}</span>
-<span class=p>}</span>
-</code></pre></td></tr></table>
-</div>
-</div>
-</section>
-<footer class=article-footer>
-<section class=article-tags>
-<a href=/tags/%E7%AE%97%E6%B3%95/>算法</a>
-<a href=/tags/%E9%A2%98%E8%A7%A3/>题解</a>
-</section>
-<section class=article-copyright><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="12" cy="12" r="9"/><path d="M14.5 9a3.5 4 0 100 6"/></svg>
-<span><a href=https://creativecommons.org/licenses/by-nc-sa/4.0/>署名-非商业性使用-相同方式共享 4.0 国际</a></span>
-</section>
-<section class=article-lastmod><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 15"/></svg>
-<span>
-最后更新于 Sep 03, 2022 22:12 +0800
-</span>
-</section></footer>
-<link rel=stylesheet href=https://gcore.jsdelivr.net/npm/katex@0.15.6/dist/katex.min.css integrity="sha256-J+iAE0sgH8QSz9hpcDxXIftnj65JEZgNhGcgReTTK9s=" crossorigin=anonymous><script src=https://gcore.jsdelivr.net/npm/katex@0.15.6/dist/katex.min.js integrity="sha256-InsNdER1b2xUewP+pKCUJpkhiqwHgqiPXDlIk7GzBu4=" crossorigin=anonymous defer></script><script src=https://gcore.jsdelivr.net/npm/katex@0.15.6/dist/contrib/auto-render.min.js integrity="sha256-y39Mpg7V3D4lhBX4x6O0bUqTV4pSrfgwEfGKfxkOdgI=" crossorigin=anonymous defer></script><script>window.addEventListener("DOMContentLoaded",()=>{renderMathInElement(document.querySelector(`.article-content`),{delimiters:[{left:"$$",right:"$$",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1},{left:"\\[",right:"\\]",display:!0}],ignoredClasses:["gist"]})})</script>
-</article>
-<aside class=related-content--wrapper>
-<h2 class=section-title>相关文章</h2>
-<div class=related-content>
-<div class="flex article-list--tile">
-<article>
-<a href=/post/solution-p2013/>
-<div class=article-details>
-<h2 class=article-title>P2013 无线电测向</h2>
-</div>
-</a>
-</article>
-<article>
-<a href=/post/solution-p4825/>
-<div class=article-details>
-<h2 class=article-title>P4825 【[USACO15FEB]Cow Hopscotch S】</h2>
-</div>
-</a>
-</article>
-<article>
-<a href=/post/fully-neural-network/>
-<div class=article-details>
-<h2 class=article-title>全连接神经网络浅析</h2>
-</div>
-</a>
-</article>
-<article>
-<a href=/post/linear-regression/>
-<div class=article-details>
-<h2 class=article-title>线性回归</h2>
-</div>
-</a>
-</article>
-<article>
-<a href=/post/miller-rabin/>
-<div class=article-details>
-<h2 class=article-title>Miller Rabin 素性测试</h2>
-</div>
-</a>
-</article>
-</div>
-</div>
-</aside>
-<script src=https://giscus.app/client.js data-repo=NightSpaceC/blog data-repo-id=R_kgDOH7TGUA data-category=giscus data-category-id=DIC_kwDOH7TGUM4CRMRD data-mapping=pathname data-strict=0 data-reactions-enabled=1 data-emit-metadata=0 data-input-position=top data-theme=light data-lang=zh-CN crossorigin=anonymous async></script>
-<script>function setGiscusTheme(b){let a=document.querySelector("iframe.giscus-frame");a&&a.contentWindow.postMessage({giscus:{setConfig:{theme:b}}},"https://giscus.app")}(function(){addEventListener("message",b=>{if(event.origin!=="https://giscus.app")return;a()}),window.addEventListener("onColorSchemeChange",a);function a(){document.documentElement.dataset.scheme==="light"?setGiscusTheme('light'):setGiscusTheme('dark')}})()</script>
-<footer class=site-footer>
-<section class=copyright>
-&copy;
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-cpp data-lang=cpp><span class=line><span class=cl><span class=cp>#include</span> <span class=cpf>&lt;bits/stdc++.h&gt;</span><span class=cp>
+</span></span></span><span class=line><span class=cl><span class=cp></span><span class=k>using</span> <span class=k>namespace</span> <span class=n>std</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=k>struct</span> <span class=nc>Pig</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=kt>double</span> <span class=n>x</span><span class=p>,</span> <span class=n>y</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>};</span>
+</span></span><span class=line><span class=cl><span class=k>struct</span> <span class=nc>Line</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=kt>double</span> <span class=n>a</span><span class=p>,</span> <span class=n>b</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>};</span>
+</span></span><span class=line><span class=cl><span class=k>const</span> <span class=kt>double</span> <span class=n>EPS</span> <span class=o>=</span> <span class=mf>1e-7</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=kt>int</span> <span class=n>T</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=kt>int</span> <span class=n>n</span><span class=p>,</span> <span class=n>m</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=n>Pig</span> <span class=n>pig</span><span class=p>[</span><span class=mi>21</span><span class=p>];</span>
+</span></span><span class=line><span class=cl><span class=n>vector</span><span class=o>&lt;</span><span class=kt>uint32_t</span><span class=o>&gt;</span> <span class=n>line</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=kt>int</span> <span class=n>minw</span><span class=p>[</span><span class=mi>262144</span><span class=p>];</span>
+</span></span><span class=line><span class=cl><span class=n>Line</span> <span class=nf>getLineByPig</span><span class=p>(</span><span class=k>const</span> <span class=n>Pig</span> <span class=o>&amp;</span><span class=n>a</span><span class=p>,</span> <span class=k>const</span> <span class=n>Pig</span> <span class=o>&amp;</span><span class=n>b</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=n>Line</span> <span class=n>line</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=n>line</span><span class=p>.</span><span class=n>a</span> <span class=o>=</span> <span class=p>(</span><span class=n>b</span><span class=p>.</span><span class=n>x</span> <span class=o>*</span> <span class=n>a</span><span class=p>.</span><span class=n>y</span> <span class=o>-</span> <span class=n>a</span><span class=p>.</span><span class=n>x</span> <span class=o>*</span> <span class=n>b</span><span class=p>.</span><span class=n>y</span><span class=p>)</span> <span class=o>/</span> <span class=p>(</span><span class=n>a</span><span class=p>.</span><span class=n>x</span> <span class=o>*</span> <span class=n>b</span><span class=p>.</span><span class=n>x</span> <span class=o>*</span> <span class=p>(</span><span class=n>a</span><span class=p>.</span><span class=n>x</span> <span class=o>-</span> <span class=n>b</span><span class=p>.</span><span class=n>x</span><span class=p>));</span>
+</span></span><span class=line><span class=cl>    <span class=n>line</span><span class=p>.</span><span class=n>b</span> <span class=o>=</span> <span class=p>(</span><span class=n>a</span><span class=p>.</span><span class=n>y</span> <span class=o>-</span> <span class=n>line</span><span class=p>.</span><span class=n>a</span> <span class=o>*</span> <span class=n>a</span><span class=p>.</span><span class=n>x</span> <span class=o>*</span> <span class=n>a</span><span class=p>.</span><span class=n>x</span><span class=p>)</span> <span class=o>/</span> <span class=n>a</span><span class=p>.</span><span class=n>x</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=k>return</span> <span class=n>line</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl><span class=kt>uint32_t</span> <span class=nf>encodeLine</span><span class=p>(</span><span class=k>const</span> <span class=n>Line</span> <span class=o>&amp;</span><span class=n>line</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=k>if</span><span class=p>(</span><span class=n>line</span><span class=p>.</span><span class=n>a</span> <span class=o>&gt;=</span> <span class=mi>0</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=k>return</span> <span class=mi>0</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
+</span></span><span class=line><span class=cl>    <span class=kt>uint32_t</span> <span class=n>code</span> <span class=o>=</span> <span class=mi>0</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=k>for</span><span class=p>(</span><span class=kt>int</span> <span class=n>i</span> <span class=o>=</span> <span class=mi>1</span><span class=p>;</span> <span class=n>i</span> <span class=o>&lt;=</span> <span class=n>n</span><span class=p>;</span> <span class=n>i</span><span class=o>++</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=k>if</span><span class=p>(</span><span class=n>abs</span><span class=p>(</span><span class=n>line</span><span class=p>.</span><span class=n>a</span> <span class=o>*</span> <span class=n>pig</span><span class=p>[</span><span class=n>i</span><span class=p>].</span><span class=n>x</span> <span class=o>*</span> <span class=n>pig</span><span class=p>[</span><span class=n>i</span><span class=p>].</span><span class=n>x</span> <span class=o>+</span> <span class=n>line</span><span class=p>.</span><span class=n>b</span> <span class=o>*</span> <span class=n>pig</span><span class=p>[</span><span class=n>i</span><span class=p>].</span><span class=n>x</span> <span class=o>-</span> <span class=n>pig</span><span class=p>[</span><span class=n>i</span><span class=p>].</span><span class=n>y</span><span class=p>)</span> <span class=o>&lt;=</span> <span class=n>EPS</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>            <span class=n>code</span> <span class=o>|=</span> <span class=p>(</span><span class=mi>1</span> <span class=o>&lt;&lt;</span> <span class=p>(</span><span class=n>i</span> <span class=o>-</span> <span class=mi>1</span><span class=p>));</span>
+</span></span><span class=line><span class=cl>        <span class=p>}</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
+</span></span><span class=line><span class=cl>    <span class=k>return</span> <span class=n>code</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl><span class=kt>void</span> <span class=nf>bfs</span><span class=p>()</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=n>memset</span><span class=p>(</span><span class=n>minw</span><span class=p>,</span> <span class=mh>0x3f</span><span class=p>,</span> <span class=k>sizeof</span><span class=p>(</span><span class=n>minw</span><span class=p>));</span>
+</span></span><span class=line><span class=cl>    <span class=n>queue</span><span class=o>&lt;</span><span class=kt>uint32_t</span><span class=o>&gt;</span> <span class=n>q</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=n>minw</span><span class=p>[</span><span class=mi>0</span><span class=p>]</span> <span class=o>=</span> <span class=mi>0</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=n>q</span><span class=p>.</span><span class=n>push</span><span class=p>(</span><span class=mi>0</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>    <span class=k>while</span><span class=p>(</span><span class=o>!</span><span class=n>q</span><span class=p>.</span><span class=n>empty</span><span class=p>())</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=kt>uint32_t</span> <span class=n>at</span> <span class=o>=</span> <span class=n>q</span><span class=p>.</span><span class=n>front</span><span class=p>();</span>
+</span></span><span class=line><span class=cl>        <span class=n>q</span><span class=p>.</span><span class=n>pop</span><span class=p>();</span>
+</span></span><span class=line><span class=cl>        <span class=k>for</span><span class=p>(</span><span class=k>auto</span> <span class=n>i</span> <span class=o>=</span> <span class=n>line</span><span class=p>.</span><span class=n>begin</span><span class=p>();</span> <span class=n>i</span> <span class=o>!=</span> <span class=n>line</span><span class=p>.</span><span class=n>end</span><span class=p>();</span> <span class=n>i</span><span class=o>++</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>            <span class=kt>uint32_t</span> <span class=n>new_at</span> <span class=o>=</span> <span class=n>at</span> <span class=o>|</span> <span class=o>*</span><span class=n>i</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>            <span class=k>if</span><span class=p>(</span><span class=n>minw</span><span class=p>[</span><span class=n>new_at</span><span class=p>]</span> <span class=o>&gt;</span> <span class=n>minw</span><span class=p>[</span><span class=n>at</span><span class=p>]</span> <span class=o>+</span> <span class=mi>1</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>                <span class=n>minw</span><span class=p>[</span><span class=n>new_at</span><span class=p>]</span> <span class=o>=</span> <span class=n>minw</span><span class=p>[</span><span class=n>at</span><span class=p>]</span> <span class=o>+</span> <span class=mi>1</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>                <span class=k>if</span><span class=p>(</span><span class=n>new_at</span> <span class=o>==</span> <span class=p>(</span><span class=mi>1</span> <span class=o>&lt;&lt;</span> <span class=n>n</span><span class=p>)</span> <span class=o>-</span> <span class=mi>1</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>                    <span class=k>return</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>                <span class=p>}</span>
+</span></span><span class=line><span class=cl>                <span class=n>q</span><span class=p>.</span><span class=n>push</span><span class=p>(</span><span class=n>new_at</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>            <span class=p>}</span>
+</span></span><span class=line><span class=cl>        <span class=p>}</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl><span class=kt>void</span> <span class=nf>solve</span><span class=p>()</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=n>line</span><span class=p>.</span><span class=n>clear</span><span class=p>();</span>
+</span></span><span class=line><span class=cl>    <span class=n>cin</span> <span class=o>&gt;&gt;</span> <span class=n>n</span> <span class=o>&gt;&gt;</span> <span class=n>m</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=k>for</span><span class=p>(</span><span class=kt>int</span> <span class=n>i</span> <span class=o>=</span> <span class=mi>1</span><span class=p>;</span> <span class=n>i</span> <span class=o>&lt;=</span> <span class=n>n</span><span class=p>;</span> <span class=n>i</span><span class=o>++</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=n>cin</span> <span class=o>&gt;&gt;</span> <span class=n>pig</span><span class=p>[</span><span class=n>i</span><span class=p>].</span><span class=n>x</span> <span class=o>&gt;&gt;</span> <span class=n>pig</span><span class=p>[</span><span class=n>i</span><span class=p>].</span><span class=n>y</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
+</span></span><span class=line><span class=cl>    <span class=k>for</span><span class=p>(</span><span class=kt>int</span> <span class=n>i</span> <span class=o>=</span> <span class=mi>1</span><span class=p>;</span> <span class=n>i</span> <span class=o>&lt;=</span> <span class=n>n</span><span class=p>;</span> <span class=n>i</span><span class=o>++</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=k>for</span><span class=p>(</span><span class=kt>int</span> <span class=n>j</span> <span class=o>=</span> <span class=n>i</span> <span class=o>+</span> <span class=mi>1</span><span class=p>;</span> <span class=n>j</span> <span class=o>&lt;=</span> <span class=n>n</span><span class=p>;</span> <span class=n>j</span><span class=o>++</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>            <span class=n>line</span><span class=p>.</span><span class=n>push_back</span><span class=p>(</span><span class=n>encodeLine</span><span class=p>(</span><span class=n>getLineByPig</span><span class=p>(</span><span class=n>pig</span><span class=p>[</span><span class=n>i</span><span class=p>],</span> <span class=n>pig</span><span class=p>[</span><span class=n>j</span><span class=p>])));</span>
+</span></span><span class=line><span class=cl>        <span class=p>}</span>
+</span></span><span class=line><span class=cl>        <span class=n>line</span><span class=p>.</span><span class=n>push_back</span><span class=p>(</span><span class=mi>1</span> <span class=o>&lt;&lt;</span> <span class=p>(</span><span class=n>i</span> <span class=o>-</span> <span class=mi>1</span><span class=p>));</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
+</span></span><span class=line><span class=cl>    <span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=n>set</span><span class=o>&lt;</span><span class=kt>uint32_t</span><span class=o>&gt;</span> <span class=n>tmp</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>        <span class=k>for</span><span class=p>(</span><span class=k>auto</span> <span class=n>i</span> <span class=o>=</span> <span class=n>line</span><span class=p>.</span><span class=n>begin</span><span class=p>();</span> <span class=n>i</span> <span class=o>!=</span> <span class=n>line</span><span class=p>.</span><span class=n>end</span><span class=p>();</span> <span class=n>i</span><span class=o>++</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>            <span class=n>tmp</span><span class=p>.</span><span class=n>insert</span><span class=p>(</span><span class=o>*</span><span class=n>i</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>        <span class=p>}</span>
+</span></span><span class=line><span class=cl>        <span class=n>line</span><span class=p>.</span><span class=n>clear</span><span class=p>();</span>
+</span></span><span class=line><span class=cl>        <span class=k>for</span><span class=p>(</span><span class=k>auto</span> <span class=n>i</span> <span class=o>=</span> <span class=n>tmp</span><span class=p>.</span><span class=n>begin</span><span class=p>();</span> <span class=n>i</span> <span class=o>!=</span> <span class=n>tmp</span><span class=p>.</span><span class=n>end</span><span class=p>();</span> <span class=n>i</span><span class=o>++</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>            <span class=n>line</span><span class=p>.</span><span class=n>push_back</span><span class=p>(</span><span class=o>*</span><span class=n>i</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>        <span class=p>}</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
+</span></span><span class=line><span class=cl>    <span class=n>bfs</span><span class=p>();</span>
+</span></span><span class=line><span class=cl>    <span class=n>cout</span> <span class=o>&lt;&lt;</span> <span class=n>minw</span><span class=p>[(</span><span class=mi>1</span> <span class=o>&lt;&lt;</span> <span class=n>n</span><span class=p>)</span> <span class=o>-</span> <span class=mi>1</span><span class=p>]</span> <span class=o>&lt;&lt;</span> <span class=n>endl</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl><span class=kt>int</span> <span class=nf>main</span><span class=p>()</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=n>ios</span><span class=o>::</span><span class=n>sync_with_stdio</span><span class=p>(</span><span class=nb>false</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>    <span class=n>cin</span><span class=p>.</span><span class=n>tie</span><span class=p>(</span><span class=k>nullptr</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>    <span class=n>cout</span><span class=p>.</span><span class=n>tie</span><span class=p>(</span><span class=k>nullptr</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>    <span class=n>cin</span> <span class=o>&gt;&gt;</span> <span class=n>T</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=k>for</span><span class=p>(</span><span class=kt>int</span> <span class=n>i</span> <span class=o>=</span> <span class=mi>1</span><span class=p>;</span> <span class=n>i</span> <span class=o>&lt;=</span> <span class=n>T</span><span class=p>;</span> <span class=n>i</span><span class=o>++</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=n>solve</span><span class=p>();</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div></section><footer class=article-footer><section class=article-tags><a href=/tags/%E7%AE%97%E6%B3%95/>算法</a>
+<a href=/tags/%E9%A2%98%E8%A7%A3/>题解</a></section><section class=article-copyright><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="12" cy="12" r="9"/><path d="M14.5 9a3.5 4 0 100 6"/></svg><span><a class=link href=https://creativecommons.org/licenses/by-nc-sa/4.0/ target=_blank rel=noopener>署名-非商业性使用-相同方式共享 4.0 国际</a></span></section><section class=article-lastmod><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 15"/></svg><span>最后更新于 Sep 03, 2022 22:12 +0800</span></section></footer><link rel=stylesheet href=https://gcore.jsdelivr.net/npm/katex@0.15.6/dist/katex.min.css integrity="sha256-J+iAE0sgH8QSz9hpcDxXIftnj65JEZgNhGcgReTTK9s=" crossorigin=anonymous><script src=https://gcore.jsdelivr.net/npm/katex@0.15.6/dist/katex.min.js integrity="sha256-InsNdER1b2xUewP+pKCUJpkhiqwHgqiPXDlIk7GzBu4=" crossorigin=anonymous defer></script><script src=https://gcore.jsdelivr.net/npm/katex@0.15.6/dist/contrib/auto-render.min.js integrity="sha256-y39Mpg7V3D4lhBX4x6O0bUqTV4pSrfgwEfGKfxkOdgI=" crossorigin=anonymous defer></script><script>window.addEventListener("DOMContentLoaded",()=>{renderMathInElement(document.querySelector(`.article-content`),{delimiters:[{left:"$$",right:"$$",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1},{left:"\\[",right:"\\]",display:!0}],ignoredClasses:["gist"]})})</script></article><aside class=related-content--wrapper><h2 class=section-title>相关文章</h2><div class=related-content><div class="flex article-list--tile"><article><a href=/post/solution-p2013/><div class=article-details><h2 class=article-title>P2013 无线电测向</h2></div></a></article><article><a href=/post/solution-p4825/><div class=article-details><h2 class=article-title>P4825 【[USACO15FEB]Cow Hopscotch S】</h2></div></a></article><article><a href=/post/fully-neural-network/><div class=article-details><h2 class=article-title>全连接神经网络浅析</h2></div></a></article><article><a href=/post/linear-regression/><div class=article-details><h2 class=article-title>线性回归</h2></div></a></article><article><a href=/post/miller-rabin/><div class=article-details><h2 class=article-title>Miller Rabin 素性测试</h2></div></a></article></div></div></aside><script src=https://giscus.app/client.js data-repo=NightSpaceC/blog data-repo-id=R_kgDOH7TGUA data-category=giscus data-category-id=DIC_kwDOH7TGUM4CRMRD data-mapping=pathname data-strict=0 data-reactions-enabled=1 data-emit-metadata=0 data-input-position=top data-theme=light data-lang=zh-CN crossorigin=anonymous async></script><script>function setGiscusTheme(e){let t=document.querySelector("iframe.giscus-frame");t&&t.contentWindow.postMessage({giscus:{setConfig:{theme:e}}},"https://giscus.app")}(function(){addEventListener("message",t=>{if(event.origin!=="https://giscus.app")return;e()}),window.addEventListener("onColorSchemeChange",e);function e(){setGiscusTheme(document.documentElement.dataset.scheme==="light"?"light":"dark")}})()</script><footer class=site-footer><section class=copyright>&copy;
 2021 -
-2023 Night Space
-</section>
-<section class=powerby>
-Built with <a href=https://gohugo.io/ target=_blank rel=noopener>Hugo</a> <br>
-主题 <b><a href=https://github.com/CaiJimmy/hugo-theme-stack target=_blank rel=noopener data-version=3.20.0>Stack</a></b> 由 <a href=https://jimmycai.com target=_blank rel=noopener>Jimmy</a> 设计
-</section>
-</footer>
-<div class=pswp tabindex=-1 role=dialog aria-hidden=true>
-<div class=pswp__bg></div>
-<div class=pswp__scroll-wrap>
-<div class=pswp__container>
-<div class=pswp__item></div>
-<div class=pswp__item></div>
-<div class=pswp__item></div>
-</div>
-<div class="pswp__ui pswp__ui--hidden">
-<div class=pswp__top-bar>
-<div class=pswp__counter></div>
-<button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+2023 Night Space</section><section class=powerby>Built with <a href=https://gohugo.io/ target=_blank rel=noopener>Hugo</a><br>主题 <b><a href=https://github.com/CaiJimmy/hugo-theme-stack target=_blank rel=noopener data-version=3.21.0>Stack</a></b> 由 <a href=https://jimmycai.com target=_blank rel=noopener>Jimmy</a> 设计</section></footer><div class=pswp tabindex=-1 role=dialog aria-hidden=true><div class=pswp__bg></div><div class=pswp__scroll-wrap><div class=pswp__container><div class=pswp__item></div><div class=pswp__item></div><div class=pswp__item></div></div><div class="pswp__ui pswp__ui--hidden"><div class=pswp__top-bar><div class=pswp__counter></div><button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
 <button class="pswp__button pswp__button--share" title=Share></button>
 <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
-<button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
-<div class=pswp__preloader>
-<div class=pswp__preloader__icn>
-<div class=pswp__preloader__cut>
-<div class=pswp__preloader__donut></div>
-</div>
-</div>
-</div>
-</div>
-<div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
-<div class=pswp__share-tooltip></div>
-</div>
-<button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+<button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button><div class=pswp__preloader><div class=pswp__preloader__icn><div class=pswp__preloader__cut><div class=pswp__preloader__donut></div></div></div></div></div><div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap"><div class=pswp__share-tooltip></div></div><button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
 </button>
-<button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
-</button>
-<div class=pswp__caption>
-<div class=pswp__caption__center></div>
-</div>
-</div>
-</div>
-</div><script src=https://gcore.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo=" crossorigin=anonymous defer></script><script src=https://gcore.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU=" crossorigin=anonymous defer></script><link rel=stylesheet href=https://gcore.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css crossorigin=anonymous><link rel=stylesheet href=https://gcore.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css crossorigin=anonymous>
-</main>
-</div>
-<script src=https://gcore.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z+KMkF24hUW8WePSA9HM=" crossorigin=anonymous></script><script type=text/javascript src=/ts/main.js defer></script>
-<script>(function(){const a=document.createElement('link');a.href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap",a.type="text/css",a.rel="stylesheet",document.head.appendChild(a)})()</script>
-<script defer src=https://static.cloudflareinsights.com/beacon.min.js data-cf-beacon='{"token": "58e4125f7abc491fa8a29447400d8df1"}'></script>
-</body>
-</html>
+<button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button><div class=pswp__caption><div class=pswp__caption__center></div></div></div></div></div><script src=https://gcore.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo=" crossorigin=anonymous defer></script><script src=https://gcore.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU=" crossorigin=anonymous defer></script><link rel=stylesheet href=https://gcore.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css crossorigin=anonymous><link rel=stylesheet href=https://gcore.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css crossorigin=anonymous></main></div><script src=https://gcore.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z+KMkF24hUW8WePSA9HM=" crossorigin=anonymous></script><script type=text/javascript src=/ts/main.js defer></script><script>(function(){const e=document.createElement("link");e.href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap",e.type="text/css",e.rel="stylesheet",document.head.appendChild(e)})()</script><script defer src=https://static.cloudflareinsights.com/beacon.min.js data-cf-beacon='{"token": "58e4125f7abc491fa8a29447400d8df1"}'></script></body></html>

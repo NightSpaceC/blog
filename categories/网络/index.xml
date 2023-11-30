@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>网络 on Night Space</title><link>https://blog.nightspace.dynv6.net/categories/%E7%BD%91%E7%BB%9C/</link><description>Recent content in 网络 on Night Space</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Sun, 02 Apr 2023 11:54:00 +0800</lastBuildDate><atom:link href="https://blog.nightspace.dynv6.net/categories/%E7%BD%91%E7%BB%9C/index.xml" rel="self" type="application/rss+xml"/><item><title>SmartDNS 自用配置</title><link>https://blog.nightspace.dynv6.net/post/smartdns-config/</link><pubDate>Sun, 02 Apr 2023 11:54:00 +0800</pubDate><guid>https://blog.nightspace.dynv6.net/post/smartdns-config/</guid><description>&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;span class="lnt">13
+&lt;/span>&lt;span class="lnt">14
+&lt;/span>&lt;span class="lnt">15
+&lt;/span>&lt;span class="lnt">16
+&lt;/span>&lt;span class="lnt">17
+&lt;/span>&lt;span class="lnt">18
+&lt;/span>&lt;span class="lnt">19
+&lt;/span>&lt;span class="lnt">20
+&lt;/span>&lt;span class="lnt">21
+&lt;/span>&lt;span class="lnt">22
+&lt;/span>&lt;span class="lnt">23
+&lt;/span>&lt;span class="lnt">24
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">bind [::]:53
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">bind-tcp [::]:53
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">cache-size 32768
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">force-qtype-SOA 65
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">dualstack-ip-selection yes
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">response-mode fastest-ip
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">log-level info
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">server 114.114.114.114
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">server 8.8.8.8
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">server 180.76.76.76 # Baidu
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">server 117.50.10.10 # OneDNS
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">server-https https://dns.alidns.com/dns-query
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">server-https https://doh.opendns.com/dns-query
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">server-https https://1.0.0.1/dns-query
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">server-https https://dns.pub/dns-query # DNSPod
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">server-https https://dns10.quad9.net/dns-query
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">server-https https://doh.360.cn/dns-query
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div></description></item></channel></rss>
