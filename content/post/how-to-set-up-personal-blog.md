@@ -3,11 +3,16 @@ author: "Night Space"
 title: 如何利用Hugo,Fuse,Utterances,Github Pages,Github Actions搭建一个支持Marldown语法，搜索，评论，自动化部署，在线编辑的个人博客
 date: 2021-12-03T12:55:30+08:00
 lastmod: 2022-08-06T17:33:00+08:00
+expiryDate: 2023-11-30T23:01:00+08:00
 tags:
+    - 工具
     - Web
 categories:
+    - 工具
     - Web
 ---
+**本文部分内容已过时，笔者目前没有更新计划**
+
 ~~哪个男孩不渴望一个拥有一个个人博客呢~~
 
 本文将会一步一步地介绍个人博客的搭建的全过程（也是[我的个人博客](https://NightSpaceC.github.io/blog/)的搭建过程）
