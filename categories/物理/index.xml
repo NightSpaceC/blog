@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>物理 on Night Space</title><link>https://blog.nightspace.dynv6.net/categories/%E7%89%A9%E7%90%86/</link><description>Recent content in 物理 on Night Space</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Thu, 30 Nov 2023 23:20:00 +0800</lastBuildDate><atom:link href="https://blog.nightspace.dynv6.net/categories/%E7%89%A9%E7%90%86/index.xml" rel="self" type="application/rss+xml"/><item><title>能均分原理</title><link>https://blog.nightspace.dynv6.net/post/equipartition-theorem/</link><pubDate>Thu, 30 Nov 2023 23:20:00 +0800</pubDate><guid>https://blog.nightspace.dynv6.net/post/equipartition-theorem/</guid><description>&lt;p>令 $q_i$ 为 $n$ 个简正坐标及相应的广义动量，则&lt;/p>
+&lt;p>$$ \epsilon = \sum _ {i = 1} ^ {n} a_i ^ 2 q_i ^ 2 $$&lt;/p>
+&lt;p>显然，当 $a_i = 0$ ， $\left&amp;lt; a_i ^ 2 q_i ^ 2 \right&amp;gt; = 0$&lt;/p>
+&lt;p>以下假设 $a_i \neq 0$&lt;/p>
+&lt;p>由玻尔兹曼系统最概然分布&lt;/p>
+&lt;p>$$ f(\epsilon) = \frac{C ^ \epsilon g(\epsilon)}{\int _ 0 ^ {+ \infin} C ^ {\epsilon ^ \prime} g(\epsilon ^ \prime) \mathrm{d} \epsilon ^ \prime} $$&lt;/p>
+&lt;p>设 $n - 1$ 维球体&lt;/p>
+&lt;p>$$ \sum _ {j \in \left[ 1 , n \right] \cap \mathbb{N} 且 j \neq i} a_j ^ 2 q_j ^ 2 = R ^ 2 $$&lt;/p>
+&lt;p>体积为&lt;/p>
+&lt;p>$$ V = f_V R ^ {n - 1} $$&lt;/p>
+&lt;p>$$ f_V = f_V(a_1 , &amp;hellip; , a_{i - 1}, a_{i + 1}, &amp;hellip; , a_n) $$&lt;/p>
+&lt;p>所以&lt;/p>
+&lt;p>$$ g(\epsilon) = \int _ {- \frac {\sqrt {\epsilon}} {a_i}} ^ {\frac {\sqrt {\epsilon}} {a_i}} f_V \sqrt {\epsilon - a_i ^ 2 q_i ^ 2} ^ {n - 1} \mathrm{d} q_i $$&lt;/p>
+&lt;p>化简得&lt;/p>
+&lt;p>$$ g(\epsilon) = \frac {2 f_V} {a_i} \int _ 0 ^ {\sqrt {\epsilon}} \sqrt {\epsilon - t ^ 2} ^ {n - 1} \mathrm{d} t $$&lt;/p>
+&lt;p>其中进行了第一类换元积分&lt;/p>
+&lt;p>$$ t = a_i q_i $$&lt;/p>
+&lt;p>所以&lt;/p>
+&lt;p>$$ f(\epsilon) = \frac{C ^ \epsilon \int _ 0 ^ {\sqrt {\epsilon}} \sqrt {\epsilon - t ^ 2} ^ {n - 1} \mathrm{d} t}{\int _ 0 ^ {+ \infin} C ^ {\epsilon ^ \prime} \int _ 0 ^ {\sqrt {\epsilon ^ \prime}} \sqrt {{\epsilon ^ \prime} - t ^ 2} ^ {n - 1} \mathrm{d} t \mathrm{d} \epsilon ^ \prime} $$&lt;/p>
+&lt;p>由贝叶斯公式&lt;/p>
+&lt;p>$$ f(\epsilon, q_i) = f(\epsilon) \cdot \frac {f_V \sqrt {\epsilon - a_i ^ 2 q_i ^ 2} ^ {n - 1}} {g(\epsilon)} $$&lt;/p>
+&lt;p>得&lt;/p>
+&lt;p>$$ f(\epsilon, q_i) = \frac{a_i C ^ \epsilon \sqrt {\epsilon - a_i ^ 2 q_i ^ 2} ^ {n - 1}}{2 \int _ 0 ^ {+ \infin} C ^ {\epsilon ^ \prime} \int _ 0 ^ {\sqrt {\epsilon ^ \prime}} \sqrt {{\epsilon ^ \prime} - t ^ 2} ^ {n - 1} \mathrm{d} t \mathrm{d} \epsilon ^ \prime} $$&lt;/p>
+&lt;p>由全概率公式&lt;/p>
+&lt;p>$$ f(q_i) = \int _ {a_i ^ 2 q_i ^ 2} ^ {+ \infin}f(\epsilon, q_i) f(\epsilon) \mathrm{d} \epsilon $$&lt;/p>
+&lt;p>得&lt;/p>
+&lt;p>$$ f(q_i) = \frac {a_i} {2 (\int _ 0 ^ {+ \infin} C ^ {\epsilon ^ \prime} \int _ 0 ^ {\sqrt {\epsilon ^ \prime}} \sqrt {{\epsilon ^ \prime} - t ^ 2} ^ {n - 1} \mathrm{d} t \mathrm{d} \epsilon ^ \prime) ^ 2 } \int _ {a_i ^ 2 q_i ^ 2} ^ {+ \infin} C ^ {2 \epsilon} \sqrt {\epsilon - a_i ^ 2 q_i ^ 2} ^ {n - 1} \int _ 0 ^ {\sqrt {\epsilon}} \sqrt {\epsilon - t ^ 2} ^ {n - 1} \mathrm{d} t $$&lt;/p>
+&lt;p>由数学期望定义&lt;/p>
+&lt;p>$$ \left&amp;lt; a_i ^ 2 q_i ^ 2 \right&amp;gt; = \int _ {- \infin} ^ {+ \infin} a_i ^ 2 q_i ^ 2 f(q_i) \mathrm{d} q_i $$&lt;/p>
+&lt;p>所以&lt;/p>
+&lt;p>$$ \left&amp;lt; a_i ^ 2 q_i ^ 2 \right&amp;gt; = \int _ {- \infin} ^ {+ \infin} \frac {{t ^ \prime} ^ 2} {2 (\int _ 0 ^ {+ \infin} C ^ {\epsilon ^ \prime} \int _ 0 ^ {\sqrt {\epsilon ^ \prime}} \sqrt {{\epsilon ^ \prime} - t ^ 2} ^ {n - 1} \mathrm{d} t \mathrm{d} \epsilon ^ \prime) ^ 2 } \int _ {{t ^ \prime} ^ 2} ^ {+ \infin} C ^ {2 \epsilon} \sqrt {\epsilon - a_i ^ 2 q_i ^ 2} ^ {n - 1} \int _ 0 ^ {\sqrt {\epsilon}} \sqrt {\epsilon - t ^ 2} ^ {n - 1} \mathrm{d} t \mathrm{d} {t ^ \prime} $$&lt;/p>
+&lt;p>其中进行了第一类换元积分&lt;/p>
+&lt;p>$$ t ^ \prime = a_i q_i $$&lt;/p>
+&lt;p>所以&lt;/p>
+&lt;p>$$ \forall a_i \neq 0 , \left&amp;lt; a_i ^ 2 q_i ^ 2 \right&amp;gt; = \mathrm{const} $$&lt;/p></description></item></channel></rss>
