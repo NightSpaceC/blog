@@ -4,9 +4,9 @@ title: 安装与配置 Tiny Core Linux
 date: 2023-04-09T12:25:20+08:00
 lastmod: 2023-04-09T21:25:20+08:00
 tags:
-    - 笔记
+    - 工具
 categories:
-    - 笔记
+    - 工具
 ---
 # 安装
 

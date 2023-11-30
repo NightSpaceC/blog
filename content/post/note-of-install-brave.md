@@ -4,9 +4,9 @@ title: Ubuntu 安装 Brave 踩坑
 date: 2022-07-07T15:59:00+08:00
 lastmod: 2022-07-07T15:59:00+08:00
 tags:
-    - 笔记
+    - 工具
 categories:
-    - 笔记
+    - 工具
 ---
 今天我想在我的Ubuntu上装Brave，于是找到[官方文档](https://brave.com/linux/#debian-ubuntu-mint)，按照要求执行如下命令
 
