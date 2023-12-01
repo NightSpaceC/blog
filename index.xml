@@ -24,11 +24,11 @@
 &lt;p>由全概率公式&lt;/p>
 &lt;p>$$ f(q_i) = \int _ {a_i ^ 2 q_i ^ 2} ^ {+ \infin}f(\epsilon, q_i) f(\epsilon) \mathrm{d} \epsilon $$&lt;/p>
 &lt;p>得&lt;/p>
-&lt;p>$$ f(q_i) = \frac {a_i} {2 (\int _ 0 ^ {+ \infin} C ^ {\epsilon ^ \prime} \int _ 0 ^ {\sqrt {\epsilon ^ \prime}} \sqrt {{\epsilon ^ \prime} - t ^ 2} ^ {n - 1} \mathrm{d} t \mathrm{d} \epsilon ^ \prime) ^ 2 } \int _ {a_i ^ 2 q_i ^ 2} ^ {+ \infin} C ^ {2 \epsilon} \sqrt {\epsilon - a_i ^ 2 q_i ^ 2} ^ {n - 1} \int _ 0 ^ {\sqrt {\epsilon}} \sqrt {\epsilon - t ^ 2} ^ {n - 1} \mathrm{d} t $$&lt;/p>
+&lt;p>$$ f(q_i) = \frac {a_i} {2 (\int _ 0 ^ {+ \infin} C ^ {\epsilon ^ \prime} \int _ 0 ^ {\sqrt {\epsilon ^ \prime}} \sqrt {{\epsilon ^ \prime} - t ^ 2} ^ {n - 1} \mathrm{d} t \mathrm{d} \epsilon ^ \prime) ^ 2 } \int _ {a_i ^ 2 q_i ^ 2} ^ {+ \infin} C ^ {2 \epsilon} \sqrt {\epsilon - a_i ^ 2 q_i ^ 2} ^ {n - 1} \int _ 0 ^ {\sqrt {\epsilon}} \sqrt {\epsilon - t ^ 2} ^ {n - 1} \mathrm{d} t \mathrm{d} \epsilon $$&lt;/p>
 &lt;p>由数学期望定义&lt;/p>
 &lt;p>$$ \left&amp;lt; a_i ^ 2 q_i ^ 2 \right&amp;gt; = \int _ {- \infin} ^ {+ \infin} a_i ^ 2 q_i ^ 2 f(q_i) \mathrm{d} q_i $$&lt;/p>
 &lt;p>所以&lt;/p>
-&lt;p>$$ \left&amp;lt; a_i ^ 2 q_i ^ 2 \right&amp;gt; = \int _ {- \infin} ^ {+ \infin} \frac {{t ^ \prime} ^ 2} {2 (\int _ 0 ^ {+ \infin} C ^ {\epsilon ^ \prime} \int _ 0 ^ {\sqrt {\epsilon ^ \prime}} \sqrt {{\epsilon ^ \prime} - t ^ 2} ^ {n - 1} \mathrm{d} t \mathrm{d} \epsilon ^ \prime) ^ 2 } \int _ {{t ^ \prime} ^ 2} ^ {+ \infin} C ^ {2 \epsilon} \sqrt {\epsilon - a_i ^ 2 q_i ^ 2} ^ {n - 1} \int _ 0 ^ {\sqrt {\epsilon}} \sqrt {\epsilon - t ^ 2} ^ {n - 1} \mathrm{d} t \mathrm{d} {t ^ \prime} $$&lt;/p>
+&lt;p>$$ \left&amp;lt; a_i ^ 2 q_i ^ 2 \right&amp;gt; = \frac {1} {(\int _ 0 ^ {+ \infin} C ^ {\epsilon ^ \prime} \int _ 0 ^ {\sqrt {\epsilon ^ \prime}} \sqrt {{\epsilon ^ \prime} - t ^ 2} ^ {n - 1} \mathrm{d} t \mathrm{d} \epsilon ^ \prime) ^ 2 } \int _ 0 ^ {+ \infin} {t ^ \prime} ^ 2 \int _ {{t ^ \prime} ^ 2} ^ {+ \infin} C ^ {2 \epsilon} \sqrt {\epsilon - a_i ^ 2 q_i ^ 2} ^ {n - 1} \int _ 0 ^ {\sqrt {\epsilon}} \sqrt {\epsilon - t ^ 2} ^ {n - 1} \mathrm{d} t \mathrm{d} \epsilon \mathrm{d} {t ^ \prime} $$&lt;/p>
 &lt;p>其中进行了第一类换元积分&lt;/p>
 &lt;p>$$ t ^ \prime = a_i q_i $$&lt;/p>
 &lt;p>所以&lt;/p>
