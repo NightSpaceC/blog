@@ -4,6 +4,8 @@
 &lt;p>以下假设 $a_i \neq 0$&lt;/p>
 &lt;p>由玻尔兹曼系统最概然分布&lt;/p>
 &lt;p>$$ f(\epsilon) = \frac {C ^ \epsilon g(\epsilon)} {\int _ 0 ^ {+ \infin} C ^ {\epsilon ^ \prime} g(\epsilon ^ \prime) \mathrm {d} \epsilon ^ \prime} $$&lt;/p>
+&lt;p>其中&lt;/p>
+&lt;p>$$ C = C(g ; \overline \epsilon) $$&lt;/p>
 &lt;p>设 $n - 1$ 维球体&lt;/p>
 &lt;p>$$ \sum _ {j \in \left[ 1 , n \right] \cap \mathbb {N} 且 j \neq i} a_j ^ 2 q_j ^ 2 = R ^ 2 $$&lt;/p>
 &lt;p>体积为&lt;/p>
